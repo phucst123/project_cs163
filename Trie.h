@@ -37,14 +37,14 @@ struct Trie {
 
     string getMeaning(const std::string& word);
 
-    void remove(const std::string& word);
+    bool remove(const std::string& word);
 
     static bool isEmptyArray(Trie::TrieNode* current);
-    static Trie::TrieNode* removeWrapper(Trie::TrieNode* current, const std::string& word, int index);
+    static Trie::TrieNode* removeWrapper(Trie::TrieNode* current, const std::string& word, int index, bool& flag);
 
 
-    void display(ostream& out);
-    static void displayWrapper(ostream& out, Trie::TrieNode*& node, string tmp);
+    void display(ostream& out, bool comma = false);
+    static void displayWrapper(ostream& out, Trie::TrieNode*& node, string tmp, bool comma);
 };
 
 

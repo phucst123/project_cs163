@@ -13,7 +13,7 @@ Trie::TrieNode::TrieNode() {
 }
 
 Trie::TrieNode::~TrieNode() {
-	
+
 	delete meaning;
 	meaning = nullptr;
 }
@@ -75,8 +75,10 @@ string Trie::getMeaning(const string& word) {
 
 
 
-void Trie::remove(const std::string& word) {
-	removeWrapper(this->root, word, 0);
+bool Trie::remove(const std::string& word) {
+	bool flag = false;
+	removeWrapper(this->root, word, 0, flag);
+	return flag;
 }
 
 bool Trie::isEmptyArray(Trie::TrieNode* current) {
@@ -88,20 +90,18 @@ bool Trie::isEmptyArray(Trie::TrieNode* current) {
 	return true;
 }
 
-Trie::TrieNode* Trie::removeWrapper(Trie::TrieNode* current, const std::string& word, int index) {
-	
+Trie::TrieNode* Trie::removeWrapper(Trie::TrieNode* current, const std::string& word, int index, bool& flag) {
+
 	if (!current)
 		return NULL;
 
-	// If last character of key is being processed
 	if (word.length() == index) {
 
-		// This node is no more end of word after removal of given key
-		if (current->isEndOfWord)
+		if (current->isEndOfWord) {
 			current->isEndOfWord = false;
+			flag = true;
+		}
 
-		// If given is not prefix of any other word
-		
 		if (isEmptyArray(current)) {
 			delete (current);
 			current = nullptr;
@@ -110,31 +110,34 @@ Trie::TrieNode* Trie::removeWrapper(Trie::TrieNode* current, const std::string& 
 		return current;
 	}
 
-	// If not last character, recur for the child
-	// obtained using ASCII value
 	int i = word[index] - 32;
-	current->children[i] = removeWrapper(current->children[i], word, index + 1);
+	current->children[i] = removeWrapper(current->children[i], word, index + 1, flag);
 
-	// If root does not have any child (its only child got deleted), and it is not end of another word.
 	if (isEmptyArray(current) && current->isEndOfWord == false) {
 		delete (current);
 		current = nullptr;
 	}
 	return current;
-	
+
 }
 
-void Trie::display(ostream& out) {
+void Trie::display(ostream& out, bool comma) {
 	if (!root)
 		return;
 	string tmp = "";
-	displayWrapper(out, root, tmp);
+	//cout << "here" << endl;
+	displayWrapper(out, root, tmp, comma);
 }
 
-void Trie::displayWrapper(ostream& out, Trie::TrieNode*& node, string tmp) {
+void Trie::displayWrapper(ostream& out, Trie::TrieNode*& node, string tmp, bool comma) {
 	if (node->isEndOfWord)
 	{
-		cout << tmp << endl;
+		out << tmp;
+		if (comma)
+			out << ",";
+		else
+			out << " : ";
+		out << *(node->meaning) << endl;
 		tmp = "";
 	}
 
@@ -144,7 +147,7 @@ void Trie::displayWrapper(ostream& out, Trie::TrieNode*& node, string tmp) {
 		if (node->children[i])
 		{
 			char t = i + 32;
-			displayWrapper(out, node->children[i], tmp + t);
+			displayWrapper(out, node->children[i], tmp + t, comma);
 		}
 	}
 }
