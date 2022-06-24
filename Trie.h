@@ -42,6 +42,9 @@ struct Trie {
     static bool isEmptyArray(Trie::TrieNode* current);
     static Trie::TrieNode* removeWrapper(Trie::TrieNode* current, const std::string& word, int index);
 
+
+    void display(ostream& out);
+    static void displayWrapper(ostream& out, Trie::TrieNode*& node, string tmp);
 };
 
 
