@@ -6,12 +6,14 @@ using namespace std;
 
 
 Trie::TrieNode::TrieNode() {
+	for (int i = 0; i < FULL; ++i)
+		children[i] = nullptr;
 	isEndOfWord = false;
 	meaning = nullptr;
 }
 
 Trie::TrieNode::~TrieNode() {
-	children.clear();
+	
 	delete meaning;
 	meaning = nullptr;
 }
@@ -33,28 +35,23 @@ void Trie::insert(const std::string& word, const std::string& definition) {
 
 	TrieNode* current = root;
 	for (int i = 0; i < word.length(); ++i) {
-		int index = word[i];
-		TrieNode* node = current->children[index];
-		if (node == nullptr) {
-			node = new TrieNode();
-			current->children[index] = node;
-		}
-		current = node;
+		int index = word[i] - 32;
+		if (!current->children[index])
+			current->children[index] = new TrieNode;
+		current = current->children[index];
 	}
 	current->isEndOfWord = true;
 	Trie::TrieNode::addDef(current->meaning, definition);
-
 }
 
 
 bool Trie::search(const std::string& word) {
 	TrieNode* current = root;
 	for (int i = 0; i < word.length(); ++i) {
-		int index = word[i];
-		TrieNode* node = current->children[index];
-		if (node == nullptr)
+		int index = word[i] - 32;
+		if (!current->children[index])
 			return false;
-		current = node;
+		current = current->children[index];
 	}
 	return current->isEndOfWord;
 }
@@ -64,12 +61,12 @@ string Trie::getMeaning(const string& word) {
 		return "Dictionary is empty";
 	TrieNode* current = root;
 	for (int i = 0; i < word.length(); ++i) {
-		int index = word[i];
-		TrieNode* node = current->children[index];
-		if (node == nullptr)
+		int index = word[i] - 32;
+		if (!current->children[index])
 			return "There is not that word in dictionary";
-		current = node;
+		current = current->children[index];
 	}
+
 	if (current->isEndOfWord)
 		return *(current->meaning);
 	else
@@ -82,38 +79,47 @@ void Trie::remove(const std::string& word) {
 	removeWrapper(this->root, word, 0);
 }
 
-bool Trie::removeWrapper(Trie::TrieNode* current, const std::string& word, int index) {
-	if (index == word.length()) {
-		if (!current->isEndOfWord) {
+bool Trie::isEmptyArray(Trie::TrieNode* current) {
+	for (int i = 0; i < FULL; ++i) {
+		if (current->children[i]) {
 			return false;
 		}
-		current->isEndOfWord = false;
-
-		// just delete the meaning pointer where it contains link to string definition
-		delete current->meaning;
-		current->meaning = nullptr;
-		// if current has no other mapping then return true
-
-		return current->children.size() == 0;
 	}
-	char ch = word[index];
-	Trie::TrieNode* node = current->children[ch];
-	if (node == nullptr) {
-		return false;
-	}
-	bool shouldDeleteCurrentNode = removeWrapper(node, word, index + 1);
-	// if true is returned then delete the mapping of character and trienode reference from map.
-	if (shouldDeleteCurrentNode) {
-		current->children.erase(ch);
-		// return true if no mappings are left in the map.
-		if (current->children.size() == 0) {
-			delete current; // deallocate
+	return true;
+}
+
+Trie::TrieNode* Trie::removeWrapper(Trie::TrieNode* current, const std::string& word, int index) {
+	
+	if (!current)
+		return NULL;
+
+	// If last character of key is being processed
+	if (word.length() == index) {
+
+		// This node is no more end of word after removal of given key
+		if (current->isEndOfWord)
+			current->isEndOfWord = false;
+
+		// If given is not prefix of any other word
+		
+		if (isEmptyArray(current)) {
+			delete (current);
 			current = nullptr;
-			return true;
 		}
-		else {
-			return false;
-		}
+
+		return current;
 	}
-	return false;
+
+	// If not last character, recur for the child
+	// obtained using ASCII value
+	int i = word[index] - 32;
+	current->children[i] = removeWrapper(current->children[i], word, index + 1);
+
+	// If root does not have any child (its only child got deleted), and it is not end of another word.
+	if (isEmptyArray(current) && current->isEndOfWord == false) {
+		delete (current);
+		current = nullptr;
+	}
+	return current;
+	
 }

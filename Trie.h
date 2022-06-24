@@ -1,16 +1,20 @@
 #ifndef TRIE
 #define TRIE
 
-
+#include "Global.h"
 #include <iostream>
 #include <string>
 #include <unordered_map>
+
+
+#define ONLYLETTER 26
+#define FULL 95
 
 using namespace std;
 
 struct Trie {
     struct TrieNode {
-        unordered_map <char, TrieNode*> children;
+        TrieNode* children[FULL];
         bool isEndOfWord;
         string* meaning;
 
@@ -35,7 +39,8 @@ struct Trie {
 
     void remove(const std::string& word);
 
-    static bool removeWrapper(Trie::TrieNode* current, const std::string& word, int index);
+    static bool isEmptyArray(Trie::TrieNode* current);
+    static Trie::TrieNode* removeWrapper(Trie::TrieNode* current, const std::string& word, int index);
 
 };
 

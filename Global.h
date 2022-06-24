@@ -6,7 +6,7 @@
 #include <string>
 #include <sstream>
 #include <unordered_map>
-
+#include <vector>
 
 // #include "IOFile.h"
 #include "Trie.h"
