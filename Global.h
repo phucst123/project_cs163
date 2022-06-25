@@ -27,11 +27,11 @@ extern vector<pair<string, string>> FavorListVieToEng;
 extern vector<pair<string, string>> FavorListSlang;
 extern vector<pair<string, string>> FavorListEmoji;
 
-extern vector<pair<string, string>> HistoryEngToEng;
-extern vector<pair<string, string>> HistoryEngToVie;
-extern vector<pair<string, string>> HistoryVieToEng;
-extern vector<pair<string, string>> HistorySlang;
-extern vector<pair<string, string>> HistoryEmoji;
+extern vector<string> HistoryEngToEng;
+extern vector<string> HistoryEngToVie;
+extern vector<string> HistoryVieToEng;
+extern vector<string> HistorySlang;
+extern vector<string> HistoryEmoji;
 
 
 

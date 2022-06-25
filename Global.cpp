@@ -14,8 +14,8 @@ vector<pair<string, string>> FavorListVieToEng;
 vector<pair<string, string>> FavorListSlang;
 vector<pair<string, string>> FavorListEmoji;
 
-vector<pair<string, string>> HistoryEngToEng;
-vector<pair<string, string>> HistoryEngToVie;
-vector<pair<string, string>> HistoryVieToEng;
-vector<pair<string, string>> HistorySlang;
-vector<pair<string, string>> HistoryEmoji;
+vector<string> HistoryEngToEng;
+vector<string> HistoryEngToVie;
+vector<string> HistoryVieToEng;
+vector<string> HistorySlang;
+vector<string> HistoryEmoji;
