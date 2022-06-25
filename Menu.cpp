@@ -1,15 +1,42 @@
 #include "Global.h"
 
-void searchWord(Trie*& myTrie, vector<string>& history) {
+void searchWord(Trie*& myTrie, vector<string>& history, vector<string>& favorlist) {
     string word, result;
     clearInputBuffer();
     cout << "Search: ";
     getline(cin, word);
-    if (myTrie->getMeaning(word, result))
+    if (myTrie->getMeaning(word, result)) {
         addToHistory(word, history);
-    cout << result << endl;
+        
+        while (true) {
+            clearScreen();
+            cout << "MEANING: " << result << endl;
+            cout << "1. Add to favorite list" << endl
+                << "2. Remove from favorite list" << endl
+                << "3. Add your extra definition" << endl
+                << "0. Back" << endl;
+            int chosen = 0;
+            clearInputBuffer();
+            cin >> chosen;
+            if (chosen == 0)
+                break;
+            else if (chosen == 1)
+                addToFavorList(word, favorlist);
+            else if (chosen == 2)
+                removeFromFavorList(word, favorlist);
+            else if (chosen == 3)
+                addExtraDefinition(result);
+            else {
+                cout << "Invalid choice." << endl;
+                milliSleep(1500);
+            }
 
-    waitForEnter();
+        }
+    }
+    else {
+        cout << result << endl;
+        waitForEnter();
+    }
 }
 
 void addWord(Trie*& myTrie) {
@@ -66,6 +93,48 @@ void viewHistory(const vector<string>& history) {
 }
 
 
+void addToFavorList(const string& word, vector<string>& favorlist) {
+    auto it = find(favorlist.begin(), favorlist.end(), word);
+    if (it != favorlist.end()) {
+        cout << "The word is already in your favorite list" << endl;
+        return;
+    }
+    favorlist.push_back(word);
+}
+
+
+void removeFromFavorList(const string& word, vector<string>& favorlist) {
+    auto it = find(favorlist.begin(), favorlist.end(), word);
+    if (it != favorlist.end()) {
+        favorlist.erase(it);
+        cout << "The word " << word << " has been removed from your favor list" << endl;
+    }
+    else {
+        cout << "The word " << word << " is not exist in your favor list" << endl;
+    }
+}
+
+
+void viewFavorList(vector<string>& favorlist) {
+    if (favorlist.size() > 0)
+        for (auto it = favorlist.begin(); it != favorlist.end(); ++it)
+            cout << *it << endl;
+    else
+        cout << "Favorite list is empty" << endl;
+
+    waitForEnter();
+}
+
+void addExtraDefinition(string& originaldef) {
+    cout << "Type extra definition: ";
+    clearInputBuffer();
+    string extra;
+    getline(cin, extra);
+    originaldef = originaldef + "\n" + extra;
+}
+
+
+
 void mainMenu() {
     while (true) {
         clearScreen();
@@ -88,23 +157,23 @@ void mainMenu() {
         switch (chosen)
         {
         case 1:
-            detailMenu(ENGTOENG, HistoryEngToEng);
+            detailMenu(ENGTOENG, HistoryEngToEng, FavorListEngToEng);
             break;
 
         case 2:
-            detailMenu(ENGTOVIE, HistoryEngToVie);
+            detailMenu(ENGTOVIE, HistoryEngToVie, FavorListEngToVie);
             break;
 
         case 3:
-            detailMenu(VIETOENG, HistoryVieToEng);
+            detailMenu(VIETOENG, HistoryVieToEng, FavorListVieToEng);
             break;
 
         case 4:
-            detailMenu(SLANG, HistorySlang);
+            detailMenu(SLANG, HistorySlang, FavorListSlang);
             break;
 
         case 5:
-            detailMenu(EMOJI, HistoryEmoji);
+            detailMenu(EMOJI, HistoryEmoji, FavorListEmoji);
             break;
 
         default:
@@ -115,7 +184,7 @@ void mainMenu() {
     }
 }
 
-void detailMenu(Trie*& myTrie, vector<string>& history) {
+void detailMenu(Trie*& myTrie, vector<string>& history, vector<string>& favorlist) {
     while (true) {
         clearScreen();
         cout << "----DASHBOARD----" << endl;
@@ -136,7 +205,7 @@ void detailMenu(Trie*& myTrie, vector<string>& history) {
         switch (chosen)
         {
         case 1:
-            searchWord(myTrie, history);
+            searchWord(myTrie, history, favorlist);
             break;
 
         case 2:

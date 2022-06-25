@@ -21,11 +21,11 @@ extern Trie* VIETOENG;
 extern Trie* SLANG;
 extern Trie* EMOJI;
 
-extern vector<pair<string, string>> FavorListEngToEng;
-extern vector<pair<string, string>> FavorListEngToVie;
-extern vector<pair<string, string>> FavorListVieToEng;
-extern vector<pair<string, string>> FavorListSlang;
-extern vector<pair<string, string>> FavorListEmoji;
+extern vector<string> FavorListEngToEng;
+extern vector<string> FavorListEngToVie;
+extern vector<string> FavorListVieToEng;
+extern vector<string> FavorListSlang;
+extern vector<string> FavorListEmoji;
 
 extern vector<string> HistoryEngToEng;
 extern vector<string> HistoryEngToVie;
