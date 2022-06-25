@@ -56,21 +56,29 @@ bool Trie::search(const std::string& word) {
 	return current->isEndOfWord;
 }
 
-string Trie::getMeaning(const string& word) {
-	if (root == nullptr)
-		return "Dictionary is empty";
+bool Trie::getMeaning(const string& word, string &result) {
+	if (root == nullptr) {
+		result = "The dictionary is empty.";
+		return false;
+	}
 	TrieNode* current = root;
 	for (int i = 0; i < word.length(); ++i) {
 		int index = word[i] - 32;
-		if (!current->children[index])
-			return "There is not that word in dictionary";
+		if (!current->children[index]) {
+			result = "Sorry! The word is not exist in this dictionary.";
+			return false;
+		}
 		current = current->children[index];
 	}
 
-	if (current->isEndOfWord)
-		return *(current->meaning);
-	else
-		return "There is not that word in dictionary";
+	if (current->isEndOfWord) {
+		result = *(current->meaning);
+		return true;
+	}
+	else {
+		result = "There is not that word in dictionary";
+		return false;
+	}
 }
 
 

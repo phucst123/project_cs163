@@ -35,7 +35,7 @@ struct Trie {
 
     bool search(const std::string& word);
 
-    string getMeaning(const std::string& word);
+    bool getMeaning(const std::string& word, string &result);
 
     bool remove(const std::string& word);
 
