@@ -1,12 +1,14 @@
 #include "Global.h"
 
-void searchWord(Trie*& myTrie) {
-    string word;
+void searchWord(Trie*& myTrie, vector<string>& history) {
+    string word, result;
     clearInputBuffer();
     cout << "Search: ";
     getline(cin, word);
-    string result = myTrie->getMeaning(word);
+    if (myTrie->getMeaning(word, result))
+        addToHistory(word, history);
     cout << result << endl;
+
     waitForEnter();
 }
 
@@ -43,6 +45,27 @@ void viewAllWord(Trie*& myTrie) {
     waitForEnter();
 }
 
+
+void addToHistory(const string& word, vector<string>& history) {
+    auto it = find(history.begin(), history.end(), word);
+    if (it != history.end())
+        history.erase(it);
+    history.push_back(word);
+    while (history.size() > SIZEOFHISTORY)
+        history.erase(history.begin());
+}
+
+void viewHistory(const vector<string>& history) {
+    if (history.size() > 0)
+        for (auto it = history.rbegin(); it != history.rend(); ++it)
+            cout << *it << endl;
+    else
+        cout << "History is empty" << endl;
+
+    waitForEnter();
+}
+
+
 void mainMenu() {
     while (true) {
         clearScreen();
@@ -65,23 +88,23 @@ void mainMenu() {
         switch (chosen)
         {
         case 1:
-            detailMenu(ENGTOENG);
+            detailMenu(ENGTOENG, HistoryEngToEng);
             break;
 
         case 2:
-            detailMenu(ENGTOVIE);
+            detailMenu(ENGTOVIE, HistoryEngToVie);
             break;
 
         case 3:
-            detailMenu(VIETOENG);
+            detailMenu(VIETOENG, HistoryVieToEng);
             break;
 
         case 4:
-            detailMenu(SLANG);
+            detailMenu(SLANG, HistorySlang);
             break;
 
         case 5:
-            detailMenu(EMOJI);
+            detailMenu(EMOJI, HistoryEmoji);
             break;
 
         default:
@@ -92,7 +115,7 @@ void mainMenu() {
     }
 }
 
-void detailMenu(Trie*& myTrie) {
+void detailMenu(Trie*& myTrie, vector<string>& history) {
     while (true) {
         clearScreen();
         cout << "----DASHBOARD----" << endl;
@@ -100,6 +123,7 @@ void detailMenu(Trie*& myTrie) {
             << "2. Add" << endl
             << "3. Delete" << endl
             << "4. View all words" << endl
+            << "5. View history search" << endl
             << "0. Back" << endl
             << "----------------" << endl;
 
@@ -112,7 +136,7 @@ void detailMenu(Trie*& myTrie) {
         switch (chosen)
         {
         case 1:
-            searchWord(myTrie);
+            searchWord(myTrie, history);
             break;
 
         case 2:
@@ -125,6 +149,10 @@ void detailMenu(Trie*& myTrie) {
 
         case 4:
             viewAllWord(myTrie);
+            break;
+
+        case 5:
+            viewHistory(history);
             break;
 
         default:
