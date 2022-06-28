@@ -1,12 +1,12 @@
 #include "Global.h"
 
-void searchWord(Trie*& myTrie, vector<string>& history, vector<string>& favorlist) {
+void searchWord(Trie*& myTrie, vector<pair<string, string>>& history, vector<pair<string, string>>& favorlist) {
     string word, result;
     clearInputBuffer();
     cout << "Search: ";
     getline(cin, word);
     if (myTrie->getMeaning(word, result)) {
-        addToHistory(word, history);
+        addToHistory(word, result, history);
         
         while (true) {
             clearScreen();
@@ -21,7 +21,7 @@ void searchWord(Trie*& myTrie, vector<string>& history, vector<string>& favorlis
             if (chosen == 0)
                 break;
             else if (chosen == 1)
-                addToFavorList(word, favorlist);
+                addToFavorList(word, result, favorlist);
             else if (chosen == 2)
                 removeFromFavorList(word, favorlist);
             else if (chosen == 3)
@@ -73,19 +73,22 @@ void viewAllWord(Trie*& myTrie) {
 }
 
 
-void addToHistory(const string& word, vector<string>& history) {
-    auto it = find(history.begin(), history.end(), word);
+void addToHistory(const string& word, const string& def, vector<pair<string, string>>& history) {
+    auto it = std::find_if(history.begin(), history.end(),
+        [&word](const pair<string, string>& elem) {
+            return elem.first == word;
+        });
+
     if (it != history.end())
         history.erase(it);
-    history.push_back(word);
+    history.push_back(make_pair(word, def));
     while (history.size() > SIZEOFHISTORY)
         history.erase(history.begin());
 }
 
-void viewHistory(const vector<string>& history) {
+void viewHistory(const vector<pair<string, string>>& history) {
     if (history.size() > 0)
-        for (auto it = history.rbegin(); it != history.rend(); ++it)
-            cout << *it << endl;
+        displayList(history);
     else
         cout << "History is empty" << endl;
 
@@ -93,18 +96,26 @@ void viewHistory(const vector<string>& history) {
 }
 
 
-void addToFavorList(const string& word, vector<string>& favorlist) {
-    auto it = find(favorlist.begin(), favorlist.end(), word);
+void addToFavorList(const string& word, const string& def, vector<pair<string, string>>& favorlist) {
+    auto it = std::find_if(favorlist.begin(), favorlist.end(),
+        [&word](const pair<string, string>& elem) {
+            return elem.first == word;
+        });
+
     if (it != favorlist.end()) {
         cout << "The word is already in your favorite list" << endl;
         return;
     }
-    favorlist.push_back(word);
+    favorlist.push_back(make_pair(word, def));
 }
 
 
-void removeFromFavorList(const string& word, vector<string>& favorlist) {
-    auto it = find(favorlist.begin(), favorlist.end(), word);
+void removeFromFavorList(const string& word, vector<pair<string, string>>& favorlist) {
+    auto it = std::find_if(favorlist.begin(), favorlist.end(),
+        [&word](const pair<string, string>& elem) {
+            return elem.first == word;
+        });
+
     if (it != favorlist.end()) {
         favorlist.erase(it);
         cout << "The word " << word << " has been removed from your favor list" << endl;
@@ -112,13 +123,13 @@ void removeFromFavorList(const string& word, vector<string>& favorlist) {
     else {
         cout << "The word " << word << " is not exist in your favor list" << endl;
     }
+    waitForEnter();
 }
 
 
-void viewFavorList(vector<string>& favorlist) {
+void viewFavorList(const vector<pair<string, string>>& favorlist) {
     if (favorlist.size() > 0)
-        for (auto it = favorlist.begin(); it != favorlist.end(); ++it)
-            cout << *it << endl;
+        displayList(favorlist);
     else
         cout << "Favorite list is empty" << endl;
 
@@ -133,7 +144,10 @@ void addExtraDefinition(string& originaldef) {
     originaldef = originaldef + "\n" + extra;
 }
 
-
+void displayList(const vector<pair<string, string>>& myList) {
+    for (auto x : myList)
+        cout << x.first << ": " << x.second << endl;
+}
 
 void mainMenu() {
     while (true) {
@@ -184,7 +198,7 @@ void mainMenu() {
     }
 }
 
-void detailMenu(Trie*& myTrie, vector<string>& history, vector<string>& favorlist) {
+void detailMenu(Trie*& myTrie, vector<pair<string, string>>& history, vector<pair<string, string>>& favorlist) {
     while (true) {
         clearScreen();
         cout << "----DASHBOARD----" << endl;
@@ -193,6 +207,7 @@ void detailMenu(Trie*& myTrie, vector<string>& history, vector<string>& favorlis
             << "3. Delete" << endl
             << "4. View all words" << endl
             << "5. View history search" << endl
+            << "6. View favorite list" << endl
             << "0. Back" << endl
             << "----------------" << endl;
 
@@ -224,6 +239,9 @@ void detailMenu(Trie*& myTrie, vector<string>& history, vector<string>& favorlis
             viewHistory(history);
             break;
 
+        case 6:
+            viewFavorList(favorlist);
+            break;
         default:
             cout << "Invalid choice." << endl;
             milliSleep(1500);

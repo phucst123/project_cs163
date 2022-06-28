@@ -8,14 +8,14 @@ Trie* VIETOENG = new Trie;
 Trie* SLANG = new Trie;
 Trie* EMOJI = new Trie;
 
-vector<string> FavorListEngToEng;
-vector<string> FavorListEngToVie;
-vector<string> FavorListVieToEng;
-vector<string> FavorListSlang;
-vector<string> FavorListEmoji;
+vector<pair<string, string>> FavorListEngToEng;
+vector<pair<string, string>> FavorListEngToVie;
+vector<pair<string, string>> FavorListVieToEng;
+vector<pair<string, string>> FavorListSlang;
+vector<pair<string, string>> FavorListEmoji;
 
-vector<string> HistoryEngToEng;
-vector<string> HistoryEngToVie;
-vector<string> HistoryVieToEng;
-vector<string> HistorySlang;
-vector<string> HistoryEmoji;
+vector<pair<string, string>> HistoryEngToEng;
+vector<pair<string, string>> HistoryEngToVie;
+vector<pair<string, string>> HistoryVieToEng;
+vector<pair<string, string>> HistorySlang;
+vector<pair<string, string>> HistoryEmoji;

@@ -11,18 +11,20 @@ void addWord(Trie*& myTrie);
 bool deleteWord(Trie*& myTrie);
 void viewAllWord(Trie*& myTrie);
 
-void addToHistory(const string &word, vector<string>& history);
-void viewHistory(const vector<string>& history);
+void addToHistory(const string& word, const string& def, vector<pair<string, string>>& history);
+void viewHistory(const vector<pair<string, string>>& history);
 
-void addToFavorList(const string& word, vector<string>& favorlist);
-void removeFromFavorList(const string& word, vector<string>& favorlist);
-void viewFavorList(vector<string>& favorlist);
+void addToFavorList(const string& word, const string& def, vector<pair<string, string>>& favorlist);
+void removeFromFavorList(const string& word, vector<pair<string, string>>& favorlist);
+void viewFavorList(const vector<pair<string, string>>& favorlist);
 
 void addExtraDefinition(string& originaldef);
 
+void displayList(const vector<pair<string, string>>& myList);
+
 void mainMenu();
 
-void detailMenu(Trie*& myTrie, vector<string>& history, vector<string>& favorlist);
+void detailMenu(Trie*& myTrie, vector<pair<string, string>>& history, vector<pair<string, string>>& favorlist);
 
 
 #endif

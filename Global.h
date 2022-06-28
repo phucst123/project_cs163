@@ -21,17 +21,17 @@ extern Trie* VIETOENG;
 extern Trie* SLANG;
 extern Trie* EMOJI;
 
-extern vector<string> FavorListEngToEng;
-extern vector<string> FavorListEngToVie;
-extern vector<string> FavorListVieToEng;
-extern vector<string> FavorListSlang;
-extern vector<string> FavorListEmoji;
+extern vector<pair<string, string>> FavorListEngToEng;
+extern vector<pair<string, string>> FavorListEngToVie;
+extern vector<pair<string, string>> FavorListVieToEng;
+extern vector<pair<string, string>> FavorListSlang;
+extern vector<pair<string, string>> FavorListEmoji;
 
-extern vector<string> HistoryEngToEng;
-extern vector<string> HistoryEngToVie;
-extern vector<string> HistoryVieToEng;
-extern vector<string> HistorySlang;
-extern vector<string> HistoryEmoji;
+extern vector<pair<string, string>> HistoryEngToEng;
+extern vector<pair<string, string>> HistoryEngToVie;
+extern vector<pair<string, string>> HistoryVieToEng;
+extern vector<pair<string, string>> HistorySlang;
+extern vector<pair<string, string>> HistoryEmoji;
 
 
 
