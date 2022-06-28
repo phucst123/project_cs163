@@ -18,9 +18,13 @@ Trie::TrieNode::~TrieNode() {
 	meaning = nullptr;
 }
 
-void Trie::TrieNode::addDef(std::string*& pStr, const std::string def) {
-	pStr = new string;
-	*pStr = def;
+void Trie::TrieNode::addDef(std::string*& pStr, const std::string def, bool exist) {
+	if (exist)
+		*pStr += "\n" + def;
+	else {
+		pStr = new string;
+		*pStr = def;
+	}
 }
 
 Trie::Trie() {
@@ -40,8 +44,9 @@ void Trie::insert(const std::string& word, const std::string& definition) {
 			current->children[index] = new TrieNode;
 		current = current->children[index];
 	}
+
+	Trie::TrieNode::addDef(current->meaning, definition, current->isEndOfWord);
 	current->isEndOfWord = true;
-	Trie::TrieNode::addDef(current->meaning, definition);
 }
 
 

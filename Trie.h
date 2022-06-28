@@ -22,7 +22,7 @@ struct Trie {
         TrieNode();
         ~TrieNode();
 
-        static void addDef(std::string*& pStr, const std::string def);
+        static void addDef(std::string*& pStr, const std::string, bool exist);
     };
 
     TrieNode* root;

@@ -13,7 +13,7 @@ void loadData();
 void saveData();
 
 void readFromCSV(const std::string& filepath, Trie*& myTrie);
-void reset(const std::string& filepath, Trie*& myTrie);
+//void reset(const std::string& filepath, Trie*& myTrie);
 void saveToCSV(const std::string& filepath, Trie*& myTrie);
 
 
