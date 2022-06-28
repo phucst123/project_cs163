@@ -8,6 +8,8 @@ void loadData() {
 	//readFromCSV("data\\vietoeng\\", VIETOENG);
 	//readFromCSV("data\\slang\\", SLANG);
 	//readFromCSV("data\\emoji\\", EMOJI);
+
+	//readList
 }
 
 void saveData() {
@@ -57,5 +59,30 @@ void saveToCSV(const std::string& filepath, Trie*& myTrie) {
 	string absoluteDir = filepath + "currentdata.txt";
 	ofstream fout(absoluteDir);
 	myTrie->display(fout, true);
+	fout.close();
+}
+
+
+void readList(const std::string& filepath, vector<pair<string, string>>& myList) {
+	ifstream fin(filepath);
+
+	string line = "";
+	while (getline(fin, line)) {
+		string word, def;
+		stringstream ss(line);
+		getline(ss, word, ':');
+		getline(ss, def, '\n');
+		//cout << word << ": " << def << endl;
+		line = "";
+		myList.push_back(make_pair(word, def));
+	}
+
+	fin.close();
+}
+
+void saveList(const std::string& filepath, vector<pair<string, string>>& myList) {
+	ofstream fout(filepath);
+	for (auto x : myList)
+		fout << x.first << ": " << x.second << endl;
 	fout.close();
 }
