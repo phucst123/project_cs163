@@ -28,7 +28,7 @@ void readFromCSV(const std::string& filepath, Trie*& myTrie) {
 	while (getline(fin, line)) {
 		string word, def;
 		stringstream ss(line);
-		getline(ss, word, ',');
+		getline(ss, word, ':');
 		getline(ss, def, '\n');
 		//cout << word << ": " << def << endl;
 		line = "";
