@@ -58,7 +58,7 @@ void readFromCSV(const std::string& filepath, Trie*& myTrie) {
 void saveToCSV(const std::string& filepath, Trie*& myTrie) {
 	string absoluteDir = filepath + "currentdata.txt";
 	ofstream fout(absoluteDir);
-	myTrie->display(fout, true);
+	myTrie->display(fout);
 	fout.close();
 }
 
