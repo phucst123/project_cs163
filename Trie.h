@@ -33,7 +33,7 @@ struct Trie {
 
     void insert(const std::string& word, const std::string& meaning);
 
-    bool search(const std::string& word);
+    Trie::TrieNode* search(const std::string& word);
 
     bool getMeaning(const std::string& word, string &result);
 
@@ -43,8 +43,10 @@ struct Trie {
     static Trie::TrieNode* removeWrapper(Trie::TrieNode* current, const std::string& word, int index, bool& flag);
 
 
-    void display(ostream& out, bool comma = false);
-    static void displayWrapper(ostream& out, Trie::TrieNode*& node, string tmp, bool comma);
+    void display(ostream& out);
+    static void displayWrapper(ostream& out, Trie::TrieNode*& node, string tmp);
+
+    std::string getRandomWord();
 };
 
 

@@ -25,7 +25,7 @@ void searchWord(Trie*& myTrie, vector<pair<string, string>>& history, vector<pai
             else if (chosen == 2)
                 removeFromFavorList(word, favorlist);
             else if (chosen == 3)
-                addExtraDefinition(result);
+                addExtraDefinition(word, result, myTrie);
             else {
                 cout << "Invalid choice." << endl;
                 milliSleep(1500);
@@ -72,6 +72,11 @@ void viewAllWord(Trie*& myTrie) {
     waitForEnter();
 }
 
+void randomWord(Trie*& myTrie) {
+    string word = myTrie->getRandomWord();
+    cout << "Random word: " << word << endl;
+    waitForEnter();
+}
 
 void addToHistory(const string& word, const string& def, vector<pair<string, string>>& history) {
     auto it = std::find_if(history.begin(), history.end(),
@@ -136,18 +141,21 @@ void viewFavorList(const vector<pair<string, string>>& favorlist) {
     waitForEnter();
 }
 
-void addExtraDefinition(string& originaldef) {
+void addExtraDefinition(const string& word, string& result, Trie*& myTrie) {
+    auto ptrTrieNode = myTrie->search(word);
     cout << "Type extra definition: ";
     clearInputBuffer();
     string extra;
     getline(cin, extra);
-    originaldef = originaldef + "\n" + extra;
+    Trie::TrieNode::addDef(ptrTrieNode->meaning, extra, true);
+    result += ";" + extra;
 }
 
 void displayList(const vector<pair<string, string>>& myList) {
     for (auto x : myList)
         cout << x.first << ": " << x.second << endl;
 }
+
 
 void mainMenu() {
     while (true) {
@@ -208,6 +216,7 @@ void detailMenu(Trie*& myTrie, vector<pair<string, string>>& history, vector<pai
             << "4. View all words" << endl
             << "5. View history search" << endl
             << "6. View favorite list" << endl
+            << "7. Get random word" << endl
             << "0. Back" << endl
             << "----------------" << endl;
 
@@ -242,6 +251,11 @@ void detailMenu(Trie*& myTrie, vector<pair<string, string>>& history, vector<pai
         case 6:
             viewFavorList(favorlist);
             break;
+
+        case 7:
+            randomWord(myTrie);
+            break;
+
         default:
             cout << "Invalid choice." << endl;
             milliSleep(1500);

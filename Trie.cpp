@@ -20,7 +20,7 @@ Trie::TrieNode::~TrieNode() {
 
 void Trie::TrieNode::addDef(std::string*& pStr, const std::string def, bool exist) {
 	if (exist)
-		*pStr += "\n" + def;
+		*pStr += ";" + def;
 	else {
 		pStr = new string;
 		*pStr = def;
@@ -50,7 +50,7 @@ void Trie::insert(const std::string& word, const std::string& definition) {
 }
 
 
-bool Trie::search(const std::string& word) {
+Trie::TrieNode* Trie::search(const std::string& word) {
 	TrieNode* current = root;
 	for (int i = 0; i < word.length(); ++i) {
 		int index = word[i] - 32;
@@ -58,7 +58,9 @@ bool Trie::search(const std::string& word) {
 			return false;
 		current = current->children[index];
 	}
-	return current->isEndOfWord;
+	if (current->isEndOfWord)
+		return current;
+	return nullptr;
 }
 
 bool Trie::getMeaning(const string& word, string &result) {
@@ -134,24 +136,18 @@ Trie::TrieNode* Trie::removeWrapper(Trie::TrieNode* current, const std::string& 
 
 }
 
-void Trie::display(ostream& out, bool comma) {
+void Trie::display(ostream& out) {
 	if (!root)
 		return;
 	string tmp = "";
 	//cout << "here" << endl;
-	displayWrapper(out, root, tmp, comma);
+	displayWrapper(out, root, tmp);
 }
 
-void Trie::displayWrapper(ostream& out, Trie::TrieNode*& node, string tmp, bool comma) {
+void Trie::displayWrapper(ostream& out, Trie::TrieNode*& node, string tmp) {
 	if (node->isEndOfWord)
 	{
-		out << tmp;
-		if (comma)
-			out << ",";
-		else
-			out << " : ";
-		out << *(node->meaning) << endl;
-		tmp = "";
+		out << tmp << ":" << *(node->meaning) << endl;
 	}
 
 	int i;
@@ -160,7 +156,26 @@ void Trie::displayWrapper(ostream& out, Trie::TrieNode*& node, string tmp, bool 
 		if (node->children[i])
 		{
 			char t = i + 32;
-			displayWrapper(out, node->children[i], tmp + t, comma);
+			displayWrapper(out, node->children[i], tmp + t);
 		}
 	}
+}
+
+
+string Trie::getRandomWord() {
+	string word = "";
+	TrieNode* current = root;
+	srand(time(NULL));
+	while (1) {
+		int random_number = rand() % FULL;
+		if (current->children[random_number]) {
+			char ch = random_number + 32;
+			cout << "ch: " << ch << endl;
+			word += ch;
+			current = current->children[random_number];
+			if (random_number%2 && current->isEndOfWord)
+				break;
+		}
+	}
+	return word;
 }

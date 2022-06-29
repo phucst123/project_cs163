@@ -7,6 +7,8 @@
 #include <sstream>
 #include <conio.h>
 #include <vector>
+#include <cstdlib>
+#include <ctime>
 
 #include "CSV.h"
 #include "Trie.h"
