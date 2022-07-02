@@ -162,9 +162,9 @@ void Trie::displayWrapper(ostream& out, Trie::TrieNode*& node, string tmp) {
 }
 
 
-string Trie::getRandomWord(std::string& def) {
-	string word = "";
-	TrieNode* current = root, *prev = current;
+pair<string, string> Trie::getRandomWord() {
+	string word = "", def;
+	TrieNode* current = root;
 
 	random_device rd;
 	mt19937 gen(rd());
@@ -193,5 +193,5 @@ string Trie::getRandomWord(std::string& def) {
 		}
 	}
 	def = *(current->meaning);
-	return word;
+	return make_pair(word, def);
 }
