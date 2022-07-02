@@ -55,7 +55,7 @@ Trie::TrieNode* Trie::search(const std::string& word) {
 	for (int i = 0; i < word.length(); ++i) {
 		int index = word[i] - 32;
 		if (!current->children[index])
-			return false;
+			return nullptr;
 		current = current->children[index];
 	}
 	if (current->isEndOfWord)
