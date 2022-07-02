@@ -162,20 +162,31 @@ void Trie::displayWrapper(ostream& out, Trie::TrieNode*& node, string tmp) {
 }
 
 
-string Trie::getRandomWord() {
+string Trie::getRandomWord(std::string& def) {
 	string word = "";
-	TrieNode* current = root;
+	TrieNode* current = root, *prev = current;
 	srand(time(NULL));
-	while (1) {
+	bool flag = true;
+	while (flag) {
 		int random_number = rand() % FULL;
 		if (current->children[random_number]) {
 			char ch = random_number + 32;
-			cout << "ch: " << ch << endl;
+			//cout << "ch: " << ch << endl;
 			word += ch;
 			current = current->children[random_number];
-			if (random_number%2 && current->isEndOfWord)
+
+			flag = false;
+			for (int i = 0; i < FULL; ++i) {
+				if (current->children[i]) {
+					flag = true;
+					break;
+				}
+			}
+
+			if (random_number % 4 == 0 && current->isEndOfWord)
 				break;
 		}
 	}
+	def = *(current->meaning);
 	return word;
 }

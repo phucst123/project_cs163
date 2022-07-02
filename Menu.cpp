@@ -73,8 +73,9 @@ void viewAllWord(Trie*& myTrie) {
 }
 
 void randomWord(Trie*& myTrie) {
-    string word = myTrie->getRandomWord();
-    cout << "Random word: " << word << endl;
+    string def;
+    string word = myTrie->getRandomWord(def);
+    cout << "Random word: " << word << ": " << def << endl;
     waitForEnter();
 }
 

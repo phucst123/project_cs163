@@ -46,7 +46,7 @@ struct Trie {
     void display(ostream& out);
     static void displayWrapper(ostream& out, Trie::TrieNode*& node, string tmp);
 
-    std::string getRandomWord();
+    std::string getRandomWord(std::string &def);
 };
 
 
