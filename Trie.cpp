@@ -165,10 +165,15 @@ void Trie::displayWrapper(ostream& out, Trie::TrieNode*& node, string tmp) {
 string Trie::getRandomWord(std::string& def) {
 	string word = "";
 	TrieNode* current = root, *prev = current;
-	srand(time(NULL));
+
+	random_device rd;
+	mt19937 gen(rd());
+	uniform_int_distribution<> distr(0, FULL-1);
+
 	bool flag = true;
 	while (flag) {
-		int random_number = rand() % FULL;
+		int random_number = distr(gen);
+		//cout << "random number: " << random_number << endl;
 		if (current->children[random_number]) {
 			char ch = random_number + 32;
 			//cout << "ch: " << ch << endl;
@@ -183,7 +188,7 @@ string Trie::getRandomWord(std::string& def) {
 				}
 			}
 
-			if (random_number % 4 == 0 && current->isEndOfWord)
+			if (random_number % 3 == 0 && current->isEndOfWord)
 				break;
 		}
 	}
