@@ -7,7 +7,7 @@ void searchWord(Trie*& myTrie, vector<pair<string, string>>& history, vector<pai
     getline(cin, word);
     if (myTrie->getMeaning(word, result)) {
         addToHistory(word, result, history);
-        
+
         while (true) {
             clearScreen();
             cout << "MEANING: " << result << endl;
@@ -114,6 +114,45 @@ void GameWord(Trie*& myTrie)
     }
     else
         cout << fail[check]<<'\n';
+    waitForEnter();
+}
+
+void GameDefinition(Trie*& myTrie)
+{
+    pair<string, string> words[4];
+    for (int i = 0; i < 4; i++)
+    {
+        words[i] = myTrie->getRandomWord();
+    }
+    vector<int> store;
+    int res = rand() % 4;
+    cout << "WORD: " << words[res].second << '\n';
+    bool visited[4]{ false };
+    while (store.size() != 4)
+    {
+        int loop = rand() % 4;
+        if (!visited[loop])
+        {
+            cout << "Choice : " << words[loop].first << '\n';
+            visited[loop] = true;
+            store.push_back(loop);
+        }
+    }
+    string congrat[2] = { {"You are great"},{"Well done"} };
+    string fail[2] = { {"Not the right one"},{"Oops"} };
+    int choice;
+    cout << "Answer: ";
+    cin >> choice;
+
+    int check = rand() % 2;
+    if (choice > 4 || choice < 0)
+        cout << "Invalid input\n";
+    if (store[choice - 1] == res)
+    {
+        cout << congrat[check] << '\n';
+    }
+    else
+        cout << fail[check] << '\n';
     waitForEnter();
 }
 void addToHistory(const string& word, const string& def, vector<pair<string, string>>& history) {
@@ -255,6 +294,7 @@ void detailMenu(Trie*& myTrie, vector<pair<string, string>>& history, vector<pai
             << "5. View history search" << endl
             << "6. View favorite list" << endl
             << "7. Get random word" << endl
+            << "8. Game of Def\n"
             << "0. Back" << endl
             << "----------------" << endl;
 
@@ -293,7 +333,12 @@ void detailMenu(Trie*& myTrie, vector<pair<string, string>>& history, vector<pai
         case 7:
             randomWord(myTrie);
             break;
-
+        case 8:
+            GameWord(myTrie);
+            break;
+        case 9:
+            GameDefinition(myTrie);
+            break;
         default:
             cout << "Invalid choice." << endl;
             milliSleep(1500);
