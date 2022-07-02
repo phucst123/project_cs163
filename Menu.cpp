@@ -73,51 +73,50 @@ void viewAllWord(Trie*& myTrie) {
 }
 
 void randomWord(Trie*& myTrie) {
-    string def;
-    string word = myTrie->getRandomWord(def);
-    cout << "Random word: " << word << ": " << def << endl;
+    auto res = myTrie->getRandomWord();
+    cout << "Random word: " << res.first << ": " << res.second << endl;
     waitForEnter();
 }
 
-void GameWord(Trie*& myTrie)
-{
-    pair<string, string> words[4];
-    for (int i = 0; i < 4; i++)
-    {
-        words[i] = randomWord(myTrie);
-    }
-    bool visited[4]{ false };
-    int res = rand() % 4;
-    cout << "WORD : " << words[res].first << '\n';
-    queue<int> listing;
-    while (listing.size() != 4)
-    {
-        int loop = rand() % 4;
-        if (visited[loop] == false)
-        {
-            cout <<"Choice: "<< words[loop].second << '\n';
-            visited[loop] = true;
-            listing.push(loop);
-        }
-    }
-    string congrat[2] = { {"You are great"},{"Well done"} };
-    string fail[2] = { {"Not the right one"},{"Oops"} };
-    int choice;
-    cin >> choice;
-    for (int i = 0; i < choice-1; i++)
-    {
-        listing.pop();
-    }
-    int check = rand() % 2;
-    if (listing.front() == res)
-    {
-        cout << congrat[check]<<'\n';
-    }
-    else
-        cout << fail[check]<<'\n';
-    waitForEnter();
-}
-
+//void GameWord(Trie*& myTrie)
+//{
+//    pair<string, string> words[4];
+//    for (int i = 0; i < 4; i++)
+//    {
+//        words[i] = randomWord(myTrie);
+//    }
+//    bool visited[4]{ false };
+//    int res = rand() % 4;
+//    cout << "WORD : " << words[res].first << '\n';
+//    queue<int> listing;
+//    while (listing.size() != 4)
+//    {
+//        int loop = rand() % 4;
+//        if (visited[loop] == false)
+//        {
+//            cout <<"Choice: "<< words[loop].second << '\n';
+//            visited[loop] = true;
+//            listing.push(loop);
+//        }
+//    }
+//    string congrat[2] = { {"You are great"},{"Well done"} };
+//    string fail[2] = { {"Not the right one"},{"Oops"} };
+//    int choice;
+//    cin >> choice;
+//    for (int i = 0; i < choice-1; i++)
+//    {
+//        listing.pop();
+//    }
+//    int check = rand() % 2;
+//    if (listing.front() == res)
+//    {
+//        cout << congrat[check]<<'\n';
+//    }
+//    else
+//        cout << fail[check]<<'\n';
+//    waitForEnter();
+//}
+//
 void addToHistory(const string& word, const string& def, vector<pair<string, string>>& history) {
     auto it = std::find_if(history.begin(), history.end(),
         [&word](const pair<string, string>& elem) {
