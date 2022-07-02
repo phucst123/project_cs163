@@ -50,22 +50,50 @@ void readFromCSV(const std::string& filepath, Trie*& myTrie) {
 	}
 }
 
-//
-//void reset(const std::string& filepath, Trie*& myTrie)
-//{
-//	string absoluteDir = filepath + "originaldata.txt";
-//	ifstream fin(absoluteDir);
-//	string line = "";
-//	while(getline(fin,line))
-//	{
-//		string word,def;
-//		stringstream ss(line);
-//		getline(ss,word,',');
-//		getline(ss,def,',');
-//		line  = "";
-//		myTrie->insert(word,def);
-//	}
-//}
+void resetFromCSV(const std::string& filepath, Trie*& myTrie)
+{
+	saveData();
+	string absoluteDir = filepath + "currentdata.txt";
+	ifstream fin(absoluteDir);
+	if (!fin.is_open())
+		cout << "CANNOT OPEN FILE " << absoluteDir << endl;
+	else {
+		string line = "";
+		while (getline(fin, line)) {
+			string word, def;
+			stringstream ss(line);
+			getline(ss, word, ':');
+			getline(ss, def, '\n');
+			//cout << word << ": " << def << endl;
+			line = "";
+			if (myTrie->remove(word))
+				continue;
+		}
+		delete myTrie;
+		myTrie = new Trie;
+		readagain(filepath, myTrie);
+	}
+}
+
+void readagain(const std::string& filepath, Trie*& myTrie)
+{
+	string absoluteDir = filepath + "originaldata.txt";
+	ifstream fin(absoluteDir);
+	if (!fin.is_open())
+		cout << "CANNOT OPEN FILE " << absoluteDir << endl;
+	else {
+		string line = "";
+		while (getline(fin, line)) {
+			string word, def;
+			stringstream ss(line);
+			getline(ss, word, ':');
+			getline(ss, def, '\n');
+			//cout << word << ": " << def << endl;
+			line = "";
+			myTrie->insert(word, def);
+		}
+	}
+}
 
 void saveToCSV(const std::string& filepath, Trie*& myTrie) {
 	string absoluteDir = filepath + "currentdata.txt";
