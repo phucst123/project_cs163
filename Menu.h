@@ -27,7 +27,7 @@ void mainMenu();
 
 void detailMenu(Trie*& myTrie, vector<pair<string, string>>& history, vector<pair<string, string>>& favorlist);
 
-
+void Game(Trie*& myTrie);
 #endif
 
 
