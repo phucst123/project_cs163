@@ -14,16 +14,16 @@ void GameWord(Trie*& myTrie)
     int res = rand() % 4;
     cout << "WORD: " << words[res].first << '\n';
     bool visited[4]{ false };
-    int choice = 1;
+    int option = 1;
     while (store.size() != 4)
     {
         int loop = rand() % 4;
         if (!visited[loop])
         {
-            cout << choice<<" : " << words[loop].second << '\n';
+            cout << option <<" : " << words[loop].second << '\n';
             visited[loop] = true;
             store.push_back(loop);
-            choice++;
+            option++;
         }
     }
     string congrat[2] = { {"You are great"},{"Well done"} };
@@ -59,15 +59,16 @@ void GameDefinition(Trie*& myTrie)
     int res = rand() % 4;
     cout << "WORD: " << words[res].second << '\n';
     bool visited[4]{ false };
-    int choice = 1;
+    int option = 1;
     while (store.size() != 4)
     {
         int loop = rand() % 4;
         if (!visited[loop])
         {
-            cout << choice << " : " << words[loop].first << '\n';
+            cout << option << " : " << words[loop].first << '\n';
             visited[loop] = true;
             store.push_back(loop);
+            option++;
         }
     }
     string congrat[2] = { {"You are great"},{"Well done"} };
