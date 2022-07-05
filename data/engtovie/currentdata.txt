@@ -3175,6 +3175,7 @@ auditorium: phong thinh gia, giang duong
 auditory: (thuoc) su nghe; (thuoc) thinh giac
 auger: cai khoan, mui khoan
 aught: cai gi
+augim: (dia ly,dia chat) Ogit
 augment: (ngon ngu hoc) gia to, yeu to them[ɔ:g'ment]
 augmentation: su lam tang len; su lam rong ra; su tang len; su them vao
 augmentative: lam tang them
@@ -9527,6 +9528,7 @@ courtier: nguoi du buoi chau; trieu than, can than
 courtliness: su lich su, su nha nhan
 courtly: lich su, nha nhan, phong nha
 courts: toa an quan su
+courts%te: bang moi gia, voi bat cu gia nao
 courtship: su ve van, su tan tinh, su to tinh, su tim hieu
 courtyard: san nho; san trong
 cousin: anh (em ho); anh con bac, em con chu; anh (em) con co con cau; anh (em) con di; anh chau bac, em chau chu
@@ -40337,12 +40339,12 @@ rowdyism: tinh du con
 rowel: banh duc (banh xe con o dau dinh thuc ngua)
 rower: nguoi cheo thuyen
 rowing: su cheo thuyen
-rowing ntgen: (vat ly) Rongen; tia rongen, tia X
-rowing ntgenogram: (vat ly) anh (chup bang) tia X
 rowing-boat:  danh tu
 rowlock: coc cheo
 royal: (thuoc) vua; (hang hai) canh buom ngon (o dinh cot buom); huou duc gia, nai duc gia (gac co tren 12 nhanh)
 royalism: chu nghia bao hoang
+royalism ntgen: (vat ly) Rongen; tia rongen, tia X
+royalism ntgenogram: (vat ly) anh (chup bang) tia X
 royalist: nguoi theo chu nghia bao hoang
 royalistic: bao hoang
 royally: nhu vua chua, trong the, sang trong, huy hoang, long lay
@@ -54675,7 +54677,7 @@ xerophilous: ua kho (cay)
 xerophthalmia: (y hoc) benh kho mat
 xerophyte: (thuc vat hoc) cay ua kho, cay chiu han
 xiphoid: hinh kiem
-xmas: le No-en;dem giang sinh
+xmas: le No-en
 xylem: (thuc vat hoc) chat go,  xylem
 xylocarp: (thuc vat hoc) qua moc
 xylocarpous: (thuc vat hoc) co qua moc
