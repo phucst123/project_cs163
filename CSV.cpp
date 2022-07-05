@@ -17,6 +17,15 @@ void loadData() {
 
 }
 
+void resetData()
+{
+	resetFromCSV("data\\engtoeng\\", ENGTOENG);
+	resetFromCSV("data\\engtovie\\", ENGTOVIE);
+	resetFromCSV("data\\engtovie\\", VIETOENG);
+	resetFromCSV("data\\engtovie\\", SLANG);
+	resetFromCSV("data\\engtovie\\", EMOJI);
+}
+
 void saveData() {
 	//saveToCSV("data\\engtoeng\\", ENGTOENG);
 	saveToCSV("data\\engtovie\\", ENGTOVIE);
