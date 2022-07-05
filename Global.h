@@ -8,6 +8,7 @@
 #include <conio.h>
 #include <vector>
 #include <random>
+#include <queue>
 
 #include "CSV.h"
 #include "Trie.h"
