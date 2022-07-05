@@ -78,83 +78,7 @@ void randomWord(Trie*& myTrie) {
     waitForEnter();
 }
 
-void GameWord(Trie*& myTrie)
-{
-    pair<string, string> words[4];
-    for (int i = 0; i < 4; i++)
-    {
-        words[i] = myTrie->getRandomWord();
-    }
-    vector<int> store;
-    int res = rand() % 4;
-    cout << "WORD: " << words[res].first << '\n';
-    bool visited[4]{ false };
-    while (store.size() != 4)
-    {
-        int loop = rand() % 4;
-        if (!visited[loop])
-        {
-            cout << "Choice : " << words[loop].second << '\n';
-            visited[loop] = true;
-            store.push_back(loop);
-        }
-    }
-    string congrat[2] = { {"You are great"},{"Well done"} };
-    string fail[2] = { {"Not the right one"},{"Oops"} };
-    int choice;
-    cout << "Answer: ";
-    cin >> choice;
 
-    int check = rand() % 2;
-    if (choice > 4 || choice < 0)
-        cout << "Invalid input\n";
-    if (store[choice-1] == res)
-    {
-        cout << congrat[check]<<'\n';
-    }
-    else
-        cout << fail[check]<<'\n';
-    waitForEnter();
-}
-
-void GameDefinition(Trie*& myTrie)
-{
-    pair<string, string> words[4];
-    for (int i = 0; i < 4; i++)
-    {
-        words[i] = myTrie->getRandomWord();
-    }
-    vector<int> store;
-    int res = rand() % 4;
-    cout << "WORD: " << words[res].second << '\n';
-    bool visited[4]{ false };
-    while (store.size() != 4)
-    {
-        int loop = rand() % 4;
-        if (!visited[loop])
-        {
-            cout << "Choice : " << words[loop].first << '\n';
-            visited[loop] = true;
-            store.push_back(loop);
-        }
-    }
-    string congrat[2] = { {"You are great"},{"Well done"} };
-    string fail[2] = { {"Not the right one"},{"Oops"} };
-    int choice;
-    cout << "Answer: ";
-    cin >> choice;
-
-    int check = rand() % 2;
-    if (choice > 4 || choice < 0)
-        cout << "Invalid input\n";
-    if (store[choice - 1] == res)
-    {
-        cout << congrat[check] << '\n';
-    }
-    else
-        cout << fail[check] << '\n';
-    waitForEnter();
-}
 void addToHistory(const string& word, const string& def, vector<pair<string, string>>& history) {
     auto it = std::find_if(history.begin(), history.end(),
         [&word](const pair<string, string>& elem) {
@@ -294,7 +218,7 @@ void detailMenu(Trie*& myTrie, vector<pair<string, string>>& history, vector<pai
             << "5. View history search" << endl
             << "6. View favorite list" << endl
             << "7. Get random word" << endl
-            << "8. Game of Def\n"
+            << "8. Game section\n"
             << "0. Back" << endl
             << "----------------" << endl;
 
@@ -337,12 +261,44 @@ void detailMenu(Trie*& myTrie, vector<pair<string, string>>& history, vector<pai
             GameWord(myTrie);
             break;
         case 9:
-            GameDefinition(myTrie);
+            Game(myTrie);
             break;
         default:
             cout << "Invalid choice." << endl;
             milliSleep(1500);
             break;
+        }
+    }
+}
+
+void Game(Trie*&myTrie)
+{
+    while(true)
+    {
+        clearScreen();
+        cout << "----DASHBOARD----" << endl;
+        cout << "1. The definition game\n"
+             << "2. The word game\n"
+             << "3. Return\n";
+        int choice;
+        clearInputBuffer();
+        cin >> choice;
+        if (choice == 0 )
+            break;
+        else{
+            switch(choice)
+            {
+            case 1:
+                GameDefinition(myTrie);
+                break;
+            case 2:
+                GameWord(myTrie);
+                break;
+            default:
+                cout << "Invalid choice." << endl;
+                milliSleep(1500);
+                break;
+            }
         }
     }
 }

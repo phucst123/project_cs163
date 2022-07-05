@@ -13,6 +13,7 @@
 #include "Trie.h"
 #include "Menu.h"
 #include "System.h"
+#include "Game.h"
 
 using namespace std;
 

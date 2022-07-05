@@ -11,8 +11,6 @@ void addWord(Trie*& myTrie);
 bool deleteWord(Trie*& myTrie);
 void viewAllWord(Trie*& myTrie);
 void randomWord(Trie*& myTrie);
-void GameWord(Trie*& myTrie);
-void GameDefinition(Trie*& myTrie);
 
 void addToHistory(const string& word, const string& def, vector<pair<string, string>>& history);
 void viewHistory(const vector<pair<string, string>>& history);
