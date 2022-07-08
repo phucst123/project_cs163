@@ -258,11 +258,8 @@ void detailMenu(Trie*& myTrie, vector<pair<string, string>>& history, vector<pai
             randomWord(myTrie);
             break;
         case 8:
-            GameWord(myTrie);
-            break;
-        case 9:
             Game(myTrie);
-            break;
+            break;         
         default:
             cout << "Invalid choice." << endl;
             milliSleep(1500);
@@ -271,22 +268,22 @@ void detailMenu(Trie*& myTrie, vector<pair<string, string>>& history, vector<pai
     }
 }
 
-void Game(Trie*&myTrie)
+void Game(Trie*& myTrie)
 {
-    while(true)
+    while (true)
     {
         clearScreen();
         cout << "----DASHBOARD----" << endl;
         cout << "1. The definition game\n"
-             << "2. The word game\n"
-             << "3. Return\n";
+            << "2. The word game\n"
+            << "3. Return\n";
         int choice;
         clearInputBuffer();
         cin >> choice;
-        if (choice == 0 )
+        if (choice == 3)
             break;
-        else{
-            switch(choice)
+        else {
+            switch (choice)
             {
             case 1:
                 GameDefinition(myTrie);
