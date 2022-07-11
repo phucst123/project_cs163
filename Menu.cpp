@@ -68,7 +68,7 @@ bool deleteWord(Trie*& myTrie) {
 }
 
 void viewAllWord(Trie*& myTrie) {
-    myTrie->display(cout);
+    myTrie->display(cout, ':');
     waitForEnter();
 }
 
@@ -154,7 +154,7 @@ void addExtraDefinition(const string& word, string& result, Trie*& myTrie) {
 
 void displayList(const vector<pair<string, string>>& myList) {
     for (auto x : myList)
-        cout << x.first << ": " << x.second << endl;
+        cout << x.first << ":" << x.second << endl;
 }
 
 

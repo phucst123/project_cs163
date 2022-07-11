@@ -136,18 +136,18 @@ Trie::TrieNode* Trie::removeWrapper(Trie::TrieNode* current, const std::string& 
 
 }
 
-void Trie::display(ostream& out) {
+void Trie::display(ostream& out, const char& deli) {
 	if (!root)
 		return;
 	string tmp = "";
 	//cout << "here" << endl;
-	displayWrapper(out, root, tmp);
+	displayWrapper(out, root, tmp, deli);
 }
 
-void Trie::displayWrapper(ostream& out, Trie::TrieNode*& node, string tmp) {
+void Trie::displayWrapper(ostream& out, Trie::TrieNode*& node, string tmp, const char& deli) {
 	if (node->isEndOfWord)
 	{
-		out << tmp << ":" << *(node->meaning) << endl;
+		out << tmp << deli << *(node->meaning) << endl;
 	}
 
 	int i;
@@ -156,7 +156,7 @@ void Trie::displayWrapper(ostream& out, Trie::TrieNode*& node, string tmp) {
 		if (node->children[i])
 		{
 			char t = i + 32;
-			displayWrapper(out, node->children[i], tmp + t);
+			displayWrapper(out, node->children[i], tmp + t, deli);
 		}
 	}
 }

@@ -43,8 +43,8 @@ struct Trie {
     static Trie::TrieNode* removeWrapper(Trie::TrieNode* current, const std::string& word, int index, bool& flag);
 
 
-    void display(ostream& out);
-    static void displayWrapper(ostream& out, Trie::TrieNode*& node, string tmp);
+    void display(ostream& out, const char &deli);
+    static void displayWrapper(ostream& out, Trie::TrieNode*& node, string tmp, const char& deli);
 
     std::pair<std::string,std::string> getRandomWord();
 };
