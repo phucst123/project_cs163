@@ -72,7 +72,7 @@
 :v): User has a broken nose, but it's the other way.
 :{: What?
 :}: What should we call these? (what?)
-;-): Winky smiley. User just made a flirtatious and/or sarcastic remark.More of a "don't hit me for what I just said" smiley.
+;-): Winky smiley. User just made a flirtatious and/or sarcastic remark.More of a (don't hit me for what I just said) smiley.
 <:-I: User is a dunce.
 <|-(: User is Chinese and doesn't like these kind of jokes.
 <|-): User is Chinese.
