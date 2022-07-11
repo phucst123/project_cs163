@@ -3,7 +3,7 @@
 using namespace std;
 
 void loadData() {
-	readFromCSV("data\\engtoeng\\", ENGTOENG);
+	//readFromCSV("data\\engtoeng\\", ENGTOENG);
 	readFromCSV("data\\engtovie\\", ENGTOVIE);
 	//readFromCSV("data\\vietoeng\\", VIETOENG);
 	//readFromCSV("data\\slang\\", SLANG);
@@ -19,7 +19,7 @@ void loadData() {
 
 void resetData()
 {
-	resetFromCSV("data\\engtoeng\\", ENGTOENG);
+	/*resetFromCSV("data\\engtoeng\\", ENGTOENG);*/
 	resetFromCSV("data\\engtovie\\", ENGTOVIE);
 	/*resetFromCSV("data\\engtovie\\", VIETOENG);
 	resetFromCSV("data\\engtovie\\", SLANG);
@@ -27,7 +27,7 @@ void resetData()
 }
 
 void saveData() {
-	saveToCSV("data\\engtoeng\\", ENGTOENG);
+	//saveToCSV("data\\engtoeng\\", ENGTOENG);
 	saveToCSV("data\\engtovie\\", ENGTOVIE);
 	//saveToCSV("data\\vietoeng\\", VIETOENG);
 	//saveToCSV("data\\slang\\", SLANG);
@@ -50,7 +50,7 @@ void readFromCSV(const std::string& filepath, Trie*& myTrie) {
 		while (getline(fin, line)) {
 			string word, def;
 			stringstream ss(line);
-			getline(ss, word, '"');
+			getline(ss, word, ':');
 			getline(ss, def, '\n');
 			//cout << word << ": " << def << endl;
 			line = "";
@@ -71,7 +71,7 @@ void resetFromCSV(const std::string& filepath, Trie*& myTrie)
 		while (getline(fin, line)) {
 			string word, def;
 			stringstream ss(line);
-			getline(ss, word, '"');
+			getline(ss, word, ':');
 			getline(ss, def, '\n');
 			//cout << word << ": " << def << endl;
 			line = "";
@@ -95,7 +95,7 @@ void readagain(const std::string& filepath, Trie*& myTrie)
 		while (getline(fin, line)) {
 			string word, def;
 			stringstream ss(line);
-			getline(ss, word, '"');
+			getline(ss, word, ':');
 			getline(ss, def, '\n');
 			//cout << word << ": " << def << endl;
 			line = "";
@@ -122,7 +122,7 @@ void readList(const std::string& filepath, vector<pair<string, string>>& myList)
 		while (getline(fin, line)) {
 			string word, def;
 			stringstream ss(line);
-			getline(ss, word, '"');
+			getline(ss, word, ':');
 			getline(ss, def, '\n');
 			//cout << word << ": " << def << endl;
 			line = "";
