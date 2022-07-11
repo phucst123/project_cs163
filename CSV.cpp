@@ -3,11 +3,11 @@
 using namespace std;
 
 void loadData() {
-	//readFromCSV("data\\engtoeng\\", ENGTOENG);
+	readFromCSV("data\\engtoeng\\", ENGTOENG);
 	readFromCSV("data\\engtovie\\", ENGTOVIE);
 	//readFromCSV("data\\vietoeng\\", VIETOENG);
 	//readFromCSV("data\\slang\\", SLANG);
-	//readFromCSV("data\\emoji\\", EMOJI);
+	readFromCSV("data\\emoji\\", EMOJI);
 
 	readList("data\\engtoeng\\", FavorListEngToEng);
 	readList("data\\engtovie\\", FavorListEngToVie);
@@ -19,19 +19,19 @@ void loadData() {
 
 void resetData()
 {
-	/*resetFromCSV("data\\engtoeng\\", ENGTOENG);*/
+	resetFromCSV("data\\engtoeng\\", ENGTOENG);
 	resetFromCSV("data\\engtovie\\", ENGTOVIE);
-	/*resetFromCSV("data\\engtovie\\", VIETOENG);
-	resetFromCSV("data\\engtovie\\", SLANG);
-	resetFromCSV("data\\engtovie\\", EMOJI);*/
+	//resetFromCSV("data\\engtovie\\", VIETOENG);
+	//resetFromCSV("data\\engtovie\\", SLANG);
+	resetFromCSV("data\\engtovie\\", EMOJI);
 }
 
 void saveData() {
-	//saveToCSV("data\\engtoeng\\", ENGTOENG);
+	saveToCSV("data\\engtoeng\\", ENGTOENG);
 	saveToCSV("data\\engtovie\\", ENGTOVIE);
 	//saveToCSV("data\\vietoeng\\", VIETOENG);
 	//saveToCSV("data\\slang\\", SLANG);
-	//saveToCSV("data\\emoji\\", EMOJI);
+	saveToCSV("data\\emoji\\", EMOJI);
 
 	saveList("data\\engtoeng\\", FavorListEngToEng);
 	saveList("data\\engtovie\\", FavorListEngToVie);
@@ -50,7 +50,7 @@ void readFromCSV(const std::string& filepath, Trie*& myTrie) {
 		while (getline(fin, line)) {
 			string word, def;
 			stringstream ss(line);
-			getline(ss, word, ':');
+			getline(ss, word, '\\');
 			getline(ss, def, '\n');
 			//cout << word << ": " << def << endl;
 			line = "";
@@ -71,7 +71,7 @@ void resetFromCSV(const std::string& filepath, Trie*& myTrie)
 		while (getline(fin, line)) {
 			string word, def;
 			stringstream ss(line);
-			getline(ss, word, ':');
+			getline(ss, word, '\\');
 			getline(ss, def, '\n');
 			//cout << word << ": " << def << endl;
 			line = "";
@@ -95,7 +95,7 @@ void readagain(const std::string& filepath, Trie*& myTrie)
 		while (getline(fin, line)) {
 			string word, def;
 			stringstream ss(line);
-			getline(ss, word, ':');
+			getline(ss, word, '\\');
 			getline(ss, def, '\n');
 			//cout << word << ": " << def << endl;
 			line = "";
@@ -107,7 +107,7 @@ void readagain(const std::string& filepath, Trie*& myTrie)
 void saveToCSV(const std::string& filepath, Trie*& myTrie) {
 	string absoluteDir = filepath + "currentdata.txt";
 	ofstream fout(absoluteDir);
-	myTrie->display(fout);
+	myTrie->display(fout, '\\');
 	fout.close();
 }
 
@@ -122,7 +122,7 @@ void readList(const std::string& filepath, vector<pair<string, string>>& myList)
 		while (getline(fin, line)) {
 			string word, def;
 			stringstream ss(line);
-			getline(ss, word, ':');
+			getline(ss, word, '\\');
 			getline(ss, def, '\n');
 			//cout << word << ": " << def << endl;
 			line = "";
@@ -136,6 +136,6 @@ void saveList(const std::string& filepath, vector<pair<string, string>>& myList)
 	string absoluteDir = filepath + "favor.txt";
 	ofstream fout(absoluteDir);
 	for (auto x : myList)
-		fout << x.first << ":" << x.second << endl;
+		fout << x.first << "\\" << x.second << endl;
 	fout.close();
 }
