@@ -1,120 +1,120 @@
-%-): User has been staring at a green screen for 15 hours straight.
-(8-o: It's Mr. Bill!
-(:I: User is an egghead.
-*:o): And Bozo the Clown!
-*<:-): User is wearing a Santa Claus Hat.
-+-:-): User is the Pope or holds some other religious office.
-,-): Ditto...but he's winking.
-,:-): Same thing...other side.
--6%: User is braindead.
--:-(: Real punk rockers don't smile.
--:-): User is a punk rocker.
--=* :-): User is a TeX wizard.
-.-): User only has one eye.
-3:[: Mean Pet smiley.
-3:]: Pet smiley.
-8 :-): User is a wizard.
-8 :-I: Net.unix-wizards
-8-): User is wearing sunglasses.
-8:-): User is a little girl.
-:'-(: User is crying.
-:'-): User is so happy, s/he is crying.
-:(: Sad.
-:): Happy.
-:*: Kisses.
-:*): User is drunk.
-:,(: Crying.
-:-#: User wears braces.
-:-&: User is tongue tied.
-:-(: boo hoo
-:-): ha ha
-:-)-8: User is a Big girl.
-:-)~: User drools.
-:-*: User just ate something sour.
-:-/: User is skeptical.
-:-0: No Yelling!(Quiet Lab)
-:-7: User juust made a wry statement.
-:-9: User is licking his/her lips.
-:->: hey hey
-:-?: User smokes a pipe.
-:-@: User is screaming.
-:-C: User is really bummed.
-:-D: User is laughing (at you!)
-:-E: Bucktoothed vampire.
-:-F: Bucktoothed vampire with one tooth missing.
-:-I: hmmm
-:-O: oops
-:-P: nyahhhh!
-:-Q: User is a smoker.
-:-S: User just made an incoherent statement.
-:-X: User's lips are sealed.
-:-[: User is a vampire.
-:-`: User spitting out its chewing tobacco.
-:-o: Uh oh!
-:-{): User has a mustache.
-:-{}: User wears lipstick.
-:-~): User has a cold.
-::-): User wears normal glasses.
-:<: What?
-:<): User is from an Ivy League School.
-:=): User has two noses.
-:>: What?
-:@: What?
-:C: What?
-:D: Laughter.
-:I: Hmmm...
-:O: Yelling.
-:Q: What?
-:[: Real Downer.
-:]: Gleep...a friendly midget smiley who will gladly be your friend.
-:^): User has a broken nose.
-:_): User's nose is sliding off of his face.
-:v): User has a broken nose, but it's the other way.
-:{: What?
-:}: What should we call these? (what?)
-;-): Winky smiley. User just made a flirtatious and/or sarcastic remark.More of a "don't hit me for what I just said" smiley.
-<:-I: User is a dunce.
-<|-(: User is Chinese and doesn't like these kind of jokes.
-<|-): User is Chinese.
-=): Variation on a theme...
-=)): Full of laughing
-=:-): User is a hosehead.
-=W=: Whatever
->:->: User just made a really devilish remark.
->;->: Winky and devil combined. A very lewd remark was just made.
-@:-): User is wearing a turban.
-@=: User is pro-nuclear war.
-B-): User wears horn-rimmed glasses.
-B:-): Sunglasses on head.
-C=:-): User is a chef.
-C=}>;*{)): A drunk, devilish chef with a toupee in an updraft, a mustache, and a double chin.
-E-:-): User is a Ham radio operator.
-E-:-I: Net.ham-radio
-K:P: User is a little kid with a propeller beenie.
-[:-): User is wearing a walkman.
-[:]: User is a robot.
-[]: Hugs and ...
-^-^: Satisfied Smile
-^-~: Wink
-^_-: Wink
-^_^: Smile
-^o: Snoring.
-(>w<): Troubled.
-(';'): Baby.
-('_';): Nervous
-(-_-)zzz: Sleeping.
-(^_-): Wink.
-=^_^=: Cat. 
-`:-): User shaved one of his eyebrows off this morning.
-d8=: Your pet beaver is wearing goggles and a hard hat.
-{:-): User wears a toupee.
-|-): hee hee
-|-D: ho ho
-|-I: User is asleep.
-|-O: User is yawning/snoring.
-|I: Asleep.
-}:-(: Toupee in an updraft.
-}:^#}): Updrafted bushy-mustached pointy nosed smiley with a double-chin.
-~~:-(: Net.flame
+%-)\User has been staring at a green screen for 15 hours straight.
+(8-o\It's Mr. Bill!
+(:I\User is an egghead.
+*:o)\And Bozo the Clown!
+*<:-)\User is wearing a Santa Claus Hat.
++-:-)\User is the Pope or holds some other religious office.
+,-)\Ditto...but he's winking.
+,:-)\Same thing...other side.
+-6%\User is braindead.
+-:-(\Real punk rockers don't smile.
+-:-)\User is a punk rocker.
+-=* :-)\User is a TeX wizard.
+.-)\User only has one eye.
+3:[\Mean Pet smiley.
+3:]\Pet smiley.
+8 :-)\User is a wizard.
+8 :-I\Net.unix-wizards
+8-)\User is wearing sunglasses.
+8:-)\User is a little girl.
+:'-(\User is crying.
+:'-)\User is so happy, s/he is crying.
+:(\Sad.
+:)\Happy.
+:*\Kisses.
+:*)\User is drunk.
+:,(\Crying.
+:-#\User wears braces.
+:-&\User is tongue tied.
+:-(\boo hoo
+:-)\ha ha
+:-)-8\User is a Big girl.
+:-)~\User drools.
+:-*\User just ate something sour.
+:-/\User is skeptical.
+:-0\No Yelling!(Quiet Lab)
+:-7\User juust made a wry statement.
+:-9\User is licking his/her lips.
+:->\hey hey
+:-?\User smokes a pipe.
+:-@\User is screaming.
+:-C\User is really bummed.
+:-D\User is laughing (at you!)
+:-E\Bucktoothed vampire.
+:-F\Bucktoothed vampire with one tooth missing.
+:-I\hmmm
+:-O\oops
+:-P\nyahhhh!
+:-Q\User is a smoker.
+:-S\User just made an incoherent statement.
+:-X\User's lips are sealed.
+:-[\User is a vampire.
+:-`\User spitting out its chewing tobacco.
+:-o\Uh oh!
+:-{)\User has a mustache.
+:-{}\User wears lipstick.
+:-~)\User has a cold.
+::-)\User wears normal glasses.
+:<\What?
+:<)\User is from an Ivy League School.
+:=)\User has two noses.
+:>\What?
+:@\What?
+:C\What?
+:D\Laughter.
+:I\Hmmm...
+:O\Yelling.
+:Q\What?
+:[\Real Downer.
+:]\Gleep...a friendly midget smiley who will gladly be your friend.
+:^)\User has a broken nose.
+:_)\User's nose is sliding off of his face.
+:v)\User has a broken nose, but it's the other way.
+:{\What?
+:}\What should we call these? (what?)
+;-)\Winky smiley. User just made a flirtatious and/or sarcastic remark.More of a "don't hit me for what I just said" smiley.
+<:-I\User is a dunce.
+<|-(\User is Chinese and doesn't like these kind of jokes.
+<|-)\User is Chinese.
+=)\Variation on a theme...
+=))\Full of laughing
+=:-)\User is a hosehead.
+=W=\Whatever
+>:->\User just made a really devilish remark.
+>;->\Winky and devil combined. A very lewd remark was just made.
+@:-)\User is wearing a turban.
+@=\User is pro-nuclear war.
+B-)\User wears horn-rimmed glasses.
+B:-)\Sunglasses on head.
+C=:-)\User is a chef.
+C=}>;*{))\A drunk, devilish chef with a toupee in an updraft, a mustache, and a double chin.
+E-:-)\User is a Ham radio operator.
+E-:-I\Net.ham-radio
+K:P\User is a little kid with a propeller beenie.
+[:-)\User is wearing a walkman.
+[:]\User is a robot.
+[]\Hugs and ...
+^-^\Satisfied Smile
+^-~\Wink
+^_-\Wink
+^_^\Smile
+^o\Snoring.
+(>w<)\Troubled.
+(';')\Baby.
+('_';)\Nervous
+(-_-)zzz\Sleeping.
+(^_-)\Wink.
+=^_^=\Cat. 
+`:-)\User shaved one of his eyebrows off this morning.
+d8=\Your pet beaver is wearing goggles and a hard hat.
+{:-)\User wears a toupee.
+|-)\hee hee
+|-D\ho ho
+|-I\User is asleep.
+|-O\User is yawning/snoring.
+|I\Asleep.
+}:-(\Toupee in an updraft.
+}:^#})\Updrafted bushy-mustached pointy nosed smiley with a double-chin.
+~~:-(\Net.flame
 
 
