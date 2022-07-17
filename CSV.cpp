@@ -5,7 +5,7 @@ using namespace std;
 void loadData() {
 	readFromCSV("data\\engtoeng\\", ENGTOENG);
 	readFromCSV("data\\engtovie\\", ENGTOVIE);
-	//readFromCSV("data\\vietoeng\\", VIETOENG);
+	readFromCSV("data\\vietoeng\\", VIETOENG);
 	//readFromCSV("data\\slang\\", SLANG);
 	readFromCSV("data\\emoji\\", EMOJI);
 
@@ -21,7 +21,7 @@ void resetData()
 {
 	resetFromCSV("data\\engtoeng\\", ENGTOENG);
 	resetFromCSV("data\\engtovie\\", ENGTOVIE);
-	//resetFromCSV("data\\engtovie\\", VIETOENG);
+	resetFromCSV("data\\engtovie\\", VIETOENG);
 	//resetFromCSV("data\\engtovie\\", SLANG);
 	resetFromCSV("data\\engtovie\\", EMOJI);
 }
@@ -29,7 +29,7 @@ void resetData()
 void saveData() {
 	saveToCSV("data\\engtoeng\\", ENGTOENG);
 	saveToCSV("data\\engtovie\\", ENGTOVIE);
-	//saveToCSV("data\\vietoeng\\", VIETOENG);
+	saveToCSV("data\\vietoeng\\", VIETOENG);
 	//saveToCSV("data\\slang\\", SLANG);
 	saveToCSV("data\\emoji\\", EMOJI);
 
