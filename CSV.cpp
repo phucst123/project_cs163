@@ -6,7 +6,7 @@ void loadData() {
 	readFromCSV("data\\engtoeng\\", ENGTOENG);
 	readFromCSV("data\\engtovie\\", ENGTOVIE);
 	readFromCSV("data\\vietoeng\\", VIETOENG);
-	//readFromCSV("data\\slang\\", SLANG);
+	readFromCSV("data\\slang\\", SLANG);
 	readFromCSV("data\\emoji\\", EMOJI);
 
 	readList("data\\engtoeng\\", FavorListEngToEng);
@@ -22,7 +22,7 @@ void resetData()
 	resetFromCSV("data\\engtoeng\\", ENGTOENG);
 	resetFromCSV("data\\engtovie\\", ENGTOVIE);
 	resetFromCSV("data\\engtovie\\", VIETOENG);
-	//resetFromCSV("data\\engtovie\\", SLANG);
+	resetFromCSV("data\\engtovie\\", SLANG);
 	resetFromCSV("data\\engtovie\\", EMOJI);
 }
 
@@ -30,7 +30,7 @@ void saveData() {
 	saveToCSV("data\\engtoeng\\", ENGTOENG);
 	saveToCSV("data\\engtovie\\", ENGTOVIE);
 	saveToCSV("data\\vietoeng\\", VIETOENG);
-	//saveToCSV("data\\slang\\", SLANG);
+	saveToCSV("data\\slang\\", SLANG);
 	saveToCSV("data\\emoji\\", EMOJI);
 
 	saveList("data\\engtoeng\\", FavorListEngToEng);
