@@ -61,7 +61,7 @@ bool deleteWord(Trie*& myTrie) {
         return true;
     }
     else {
-        cout << "The word is not exist in dictionary." << endl;
+        cout << "The word does not exist in the dictionary." << endl;
         waitForEnter();
         return false;
     }
