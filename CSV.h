@@ -16,6 +16,7 @@ void saveData();
 void resetData();
 
 void readFromCSV(const std::string& filepath, Trie*& myTrie);
+void readDefFromCSV(const std::string& filepath, Trie*&myTrie);
 void saveToCSV(const std::string& filepath, Trie*& myTrie);
 
 void resetFromCSV(const std::string& filepath, Trie*& myTrie);

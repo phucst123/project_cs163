@@ -9,6 +9,12 @@ void loadData() {
 	readFromCSV("data\\slang\\", SLANG);
 	readFromCSV("data\\emoji\\", EMOJI);
 
+	readDefFromCSV("data\\engtoeng\\", ENGTOENG_DEF);
+	readDefFromCSV("data\\engtovie\\", ENGTOVIE_DEF);
+	//readDefFromCSV("data\\vietoeng\\", VIETOENG_DEF);
+	readDefFromCSV("data\\slang\\", SLANG_DEF);
+	readDefFromCSV("data\\emoji\\", EMOJI_DEF);
+
 	readList("data\\engtoeng\\", FavorListEngToEng);
 	readList("data\\engtovie\\", FavorListEngToVie);
 	readList("data\\vietoeng\\", FavorListVieToEng);
@@ -40,7 +46,7 @@ void saveData() {
 	saveList("data\\emoji\\", FavorListEmoji);
 }
 
-void readFromCSV(const std::string& filepath, Trie*& myTrie) {
+void readFromCSV(const std::string& filepath, Trie*&myTrie) {
 	string absoluteDir = filepath + "currentdata.txt";
 	ifstream fin(absoluteDir);
 	if (!fin.is_open())
@@ -55,6 +61,25 @@ void readFromCSV(const std::string& filepath, Trie*& myTrie) {
 			//cout << word << ": " << def << endl;
 			line = "";
 			myTrie->insert(word, def);
+		}
+	}
+}
+
+void readDefFromCSV(const std::string& filepath, Trie*&myTrie) {
+	string absoluteDir = filepath + "currentdata.txt";
+	ifstream fin(absoluteDir);
+	if (!fin.is_open())
+		cout << "CANNOT OPEN FILE " << absoluteDir << endl;
+	else {
+		string line = "";
+		while (getline(fin, line)) {
+			string word, def;
+			stringstream ss(line);
+			getline(ss, word, '\\');
+			getline(ss, def,'\n');
+			//cout << word << ": " << def << endl;
+			line = "";
+			myTrie->insert(def,word);
 		}
 	}
 }

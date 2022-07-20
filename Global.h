@@ -9,6 +9,7 @@
 #include <vector>
 #include <random>
 #include <queue>
+#include <algorithm>
 
 #include "CSV.h"
 #include "Trie.h"
@@ -23,6 +24,12 @@ extern Trie* ENGTOVIE;
 extern Trie* VIETOENG;
 extern Trie* SLANG;
 extern Trie* EMOJI;
+
+extern Trie* ENGTOENG_DEF;
+extern Trie* ENGTOVIE_DEF;
+extern Trie* VIETOENG_DEF;
+extern Trie* SLANG_DEF;
+extern Trie* EMOJI_DEF;
 
 extern vector<pair<string, string>> FavorListEngToEng;
 extern vector<pair<string, string>> FavorListEngToVie;

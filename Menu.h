@@ -7,6 +7,7 @@
 
 
 void searchWord(Trie*& myTrie, vector<string>& history, vector<string>& favorlist);
+void searchByDef(Trie*& myTrie);
 void addWord(Trie*& myTrie);
 bool deleteWord(Trie*& myTrie);
 void viewAllWord(Trie*& myTrie);
@@ -25,7 +26,7 @@ void displayList(const vector<pair<string, string>>& myList);
 
 void mainMenu();
 
-void detailMenu(Trie*& myTrie, vector<pair<string, string>>& history, vector<pair<string, string>>& favorlist);
+void detailMenu(Trie*& myTrie,Trie*& DefTrie, vector<pair<string, string>>& history, vector<pair<string, string>>& favorlist);
 
 void Game(Trie*& myTrie);
 #endif

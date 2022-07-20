@@ -8,6 +8,12 @@ Trie* VIETOENG = new Trie;
 Trie* SLANG = new Trie;
 Trie* EMOJI = new Trie;
 
+Trie* ENGTOENG_DEF = new Trie;
+Trie* ENGTOVIE_DEF = new Trie;
+Trie* VIETOENG_DEF = new Trie;
+Trie* SLANG_DEF = new Trie;
+Trie* EMOJI_DEF = new Trie;
+
 vector<pair<string, string>> FavorListEngToEng;
 vector<pair<string, string>> FavorListEngToVie;
 vector<pair<string, string>> FavorListVieToEng;

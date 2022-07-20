@@ -39,6 +39,28 @@ void searchWord(Trie*& myTrie, vector<pair<string, string>>& history, vector<pai
     }
 }
 
+void searchByDef(Trie*& myTrie) {
+    string word, result;
+    clearInputBuffer();
+    cout << "Search: ";
+    getline(cin, word);
+    if (myTrie->getMeaning(word, result)) {
+        while (true) {
+            clearScreen();
+            cout << "Keyword: " << result << endl; 
+            clearInputBuffer();
+            int chosen = 0;
+            cout <<"Press '0' to go back : ";
+            cin>>chosen;
+            if(chosen == 0) break;
+            }
+        }
+    else {
+        cout << result << endl;
+        waitForEnter();
+    }
+}
+
 void addWord(Trie*& myTrie) {
     string word, def;
     clearInputBuffer();
@@ -180,23 +202,23 @@ void mainMenu() {
         switch (chosen)
         {
         case 1:
-            detailMenu(ENGTOENG, HistoryEngToEng, FavorListEngToEng);
+            detailMenu(ENGTOENG,ENGTOENG_DEF, HistoryEngToEng, FavorListEngToEng);
             break;
 
         case 2:
-            detailMenu(ENGTOVIE, HistoryEngToVie, FavorListEngToVie);
+            detailMenu(ENGTOVIE,ENGTOVIE_DEF, HistoryEngToVie, FavorListEngToVie);
             break;
 
         case 3:
-            detailMenu(VIETOENG, HistoryVieToEng, FavorListVieToEng);
+            detailMenu(VIETOENG,VIETOENG_DEF, HistoryVieToEng, FavorListVieToEng);
             break;
 
         case 4:
-            detailMenu(SLANG, HistorySlang, FavorListSlang);
+            detailMenu(SLANG,SLANG_DEF, HistorySlang, FavorListSlang);
             break;
 
         case 5:
-            detailMenu(EMOJI, HistoryEmoji, FavorListEmoji);
+            detailMenu(EMOJI,EMOJI_DEF, HistoryEmoji, FavorListEmoji);
             break;
 
         default:
@@ -207,18 +229,19 @@ void mainMenu() {
     }
 }
 
-void detailMenu(Trie*& myTrie, vector<pair<string, string>>& history, vector<pair<string, string>>& favorlist) {
+void detailMenu(Trie*& myTrie,Trie*& DefTrie, vector<pair<string, string>>& history, vector<pair<string, string>>& favorlist) {
     while (true) {
         clearScreen();
         cout << "----DASHBOARD----" << endl;
         cout << "1. Search" << endl
-            << "2. Add" << endl
-            << "3. Delete" << endl
-            << "4. View all words" << endl
-            << "5. View history search" << endl
-            << "6. View favorite list" << endl
-            << "7. Get random word" << endl
-            << "8. Game section\n"
+            << "2. Search by definition" << endl
+            << "3. Add" << endl
+            << "4. Delete" << endl
+            << "5. View all words" << endl
+            << "6. View history search" << endl
+            << "7. View favorite list" << endl
+            << "8. Get random word" << endl
+            << "9. Game section\n"
             << "0. Back" << endl
             << "----------------" << endl;
 
@@ -235,34 +258,38 @@ void detailMenu(Trie*& myTrie, vector<pair<string, string>>& history, vector<pai
             break;
 
         case 2:
-            addWord(myTrie);
+            searchByDef(DefTrie);
             break;
 
         case 3:
-            deleteWord(myTrie);
+            addWord(myTrie);
             break;
 
         case 4:
-            viewAllWord(myTrie);
+            deleteWord(myTrie);
             break;
 
         case 5:
-            viewHistory(history);
+            viewAllWord(myTrie);
             break;
 
         case 6:
-            viewFavorList(favorlist);
+            viewHistory(history);
             break;
 
         case 7:
+            viewFavorList(favorlist);
+            break;
+
+        case 8:
             randomWord(myTrie);
             break;
-        case 8:
-            GameWord(myTrie);
-            break;
+            
         case 9:
             Game(myTrie);
             break;
+
+
         default:
             cout << "Invalid choice." << endl;
             milliSleep(1500);
