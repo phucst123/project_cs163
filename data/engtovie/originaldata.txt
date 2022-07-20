@@ -2750,7 +2750,6 @@ arrow-head\dau mui ten
 arrow-headed\hinh mui ten
 arrowroot\(thuc vat hoc) cay hoang tinh, cay dong
 arrowy\hinh ten, giong mui ten
-arse\nhuoi at['ɑ:sinl]
 arsenal\kho chua vu khi dan duoc ((nghia den) & (nghia bong))
 arsenic\(hoa hoc) Asen
 arsenical\(hoa hoc) Asen
@@ -3176,7 +3175,6 @@ auditory\(thuoc) su nghe; (thuoc) thinh giac
 auger\cai khoan, mui khoan
 aught\cai gi
 augim\(dia ly,dia chat) Ogit
-augment\(ngon ngu hoc) gia to, yeu to them[ɔ:g'ment]
 augmentation\su lam tang len; su lam rong ra; su tang len; su them vao
 augmentative\lam tang them
 augur\(tu co,nghia co) thay boi
@@ -9499,7 +9497,6 @@ counting-house\phong tai vu
 counting-room\(tu My,nghia My) (nhu) counting-house
 countless\vo so, vo ke, khong dem xue
 countrified\co tinh chat nong thon, co ve nong thon
-country\nuoc, quoc gia; (tu My,nghia My) cau lac bo the thao ngoai troi (dat o nong thon); ghuom['kʌntridɑ:ns]; dieu nhay hai hang song doi; phu ong; nha phu ong (o nong thon); chinh dang cua nong dan
 country-seat\biet thu cua phu ong
 countryman\nguoi nong thon
 countryside\nong thon, mien que, vung que, dia phuong (o nong thon)
@@ -15527,7 +15524,6 @@ explicit\ro rang, dut khoat
 explicitness\tinh ro rang, tinh dut khoat
 explode\lam no
 exploded\da no (bom...)
-exploit\ky cong; thanh tich choi loi[iks'plɔit]
 exploitable\co the khai thac, co the khai khan
 exploitage\su khai thac, su khai khan
 exploitation\su khai thac, su khai khan
@@ -17511,7 +17507,6 @@ fore-edge\ria truoc (sach) (doi voi ria gay)
 fore-ran\bao hieu, bao truoc
 fore-run\bao hieu, bao truoc
 fore-runner\nguoi di truoc, nguoi di tien tran
-forearm\(giai phau) cang tay[fɔ:r'ɑ:m]
 forebear\to tien, ong ba ong vai; cac bac tien boi
 forebode\bao truoc, bao diem
 foreboder\diem, trieu
@@ -19436,7 +19431,6 @@ grandiloquence\tinh khoac lac, tinh khoa truong am y
 grandiloquent\khoac lac, khoa truong am y
 grandiose\vi dai, hung vi, lon lao, dai quy mo
 grandiosity\ve hung vi, ve lon lao, ve dai quy mo
-grandma\uay oac['grænmə,mɑ:]
 grandmamma\than mat) ba
 grandmother\ba
 grandmotherly\nhu ba doi voi chau; qua nuong chieu
@@ -24360,7 +24354,6 @@ intercrop\vu trong xen
 intercross\trong xen
 intercurrence\su xen vao (su viec)
 intercurrent\xen
-intercut\(dien anh) doan phim co canh xen[,intə'kʌt]
 interdenominal\chung vao cac giao phai; giua cac giao phai
 interdental\o khe rang
 interdepartmental\lien vu; lien bo
@@ -24532,7 +24525,6 @@ interpersonal\giua ca nhan voi nhau
 interphone\he thong day noi noi bo, he thong may noi noi bo (mot co quan, mot chiec tau...)
 interplait\tet vao nhau
 interplanetary\giua cac hanh tinh; giua (mot) hanh tinh va mat troi
-interplay\anh huong lan nhau; su tac dong lan nhau[,intə'plei]
 interplead\(phap ly) ra toa xu xem (giua hai nguoi) ai la ben nguyen (de kien mot nguoi thu ba)
 interpleader\(phap ly) thu tuc phan xu (giua hai nguoi) ai la ben nguyen (de kien mot nguoi thu ba)
 interpol\(viet tat) cua International Police to chuc canh sat quoc te
@@ -32109,7 +32101,6 @@ opal\(khoang chat) Opan
 opalescence\ve trang duc, ve trang sua
 opalescent\trang duc, trang sua
 opalesque\trang duc, trang sua
-opaline\(thuoc) opan; nhu opan['oupəli:n]
 opalize\lam co mau opan, lam co mau trang duc, lam co mau trang sua
 opaque\mo duc, khong trong suot
 opaqueness\tinh mo duc, tinh khong trong suot
@@ -32944,8 +32935,6 @@ overeagerness\tinh qua khao khat, tinh qua ham ho, tinh qua hao huc
 overearnest\qua hang hai, qua sot sang
 overeat\an qua nhieu, an qua muc
 overeaten\an qua nhieu, an qua muc
-overelaborate\qua ky luong, qua ti mi['ouvəri'læbəreit]
-overestimate\su danh gia qua cao['ouvər'estimeit]
 overexcite\khich dong qua do, kich thich qua muc
 overexert\bat gang qua suc
 overexertion\su gang qua suc
@@ -32961,7 +32950,6 @@ overfish\danh het ca, danh can ca (o mot khuc song...)
 overflap\giay boc (tranh...)
 overflight\su bay tren vung troi nuoc khac (de do tham)
 overflow\su tran ra (nuoc)
-overflowing\tran day, chan chua['ouvə,flouiɳ]
 overfond\qua yeu, qua thich, qua mem
 overfreight\luong qua tai
 overfulfil\hoan thanh vuot muc
@@ -33019,7 +33007,6 @@ overmantel\do trang tri dat tren be lo suoi
 overmany\nhieu qua
 overmasted\(hang hai) co cot buom dai qua; co cot buom nang qua
 overmaster\che ngu, thong tri, chinh phuc, khuat phuc, tran ap
-overmatch\nguoi thang[,ouvə'mætʃ]
 overmind\len day (dong ho) qua chat
 overmodest\qua khiem ton
 overmuch\qua, qua nhieu
@@ -33033,7 +33020,6 @@ overoptimistic\qua lac quan, lac quan teu
 overorganization\chu trong qua muc den noi quy dieu le (cua mot to chuc)
 overorganize\chu trong qua muc den noi quy dieu le cua (mot to chuc)
 overpaid\tra qua nhieu, tra thu lao qua cao (ai, viec gi)
-overpass\(tu My,nghia My) cau bac qua duong, cau chui[,ouvə'pɑ:s]
 overpast\qua roi, troi qua roi
 overpay\tra qua nhieu, tra thu lao qua cao (ai, viec gi)
 overpeopled\qua dong dan, qua dong nguoi
@@ -33061,7 +33047,6 @@ overquick\qua nhay
 overran\su lan tran, su tran ra
 overrate\danh gia qua cao
 overreach\vuot qua, vuot toi truoc;; voi qua xa, voi qua cao
-overread\doc nhieu qua['ouvə'red]
 overrefine\che soi toc lam tu; di vao nhung chi tiet qua te nhi
 overrent\lay tien thue (nha...) qua cao
 overridden\cuoi (ngua) den kiet luc
@@ -33146,9 +33131,7 @@ overtrade\buon ban qua kha nang von, buon ban qua kha nang tieu thu
 overtrain\(the duc,the thao) bat luyen tap nhieu qua
 overtrump\danh (con bai chu) cao hon
 overture\su dam phan, su thuong luong
-overturn\su lat do, su dao lon[,ouvə'tə:n]
 overunder\chong len nhau (nong sung o sung hai nong)
-overuse\su dung qua nhieu, su lam dung; dung qua lau['ouvər'ju:z]
 overvalue\danh gia qua cao
 overwalk\di bo nhieu qua ((cung) to overwalk oneself)
 overwatched\kiet suc vi thuc lau qua
@@ -50788,7 +50771,6 @@ understate\noi bot, noi giam di, bao cao khong dung su that
 understatement\su noi bot, su noi giam di; su noi khong dung su that
 understock\cap thieu, cap khong du (dung cu cho mot nong truong, hang hoa cho mot cua hang...)
 understood\hieu, nam duoc y, biet
-understrapper\kuom thong['ʌndə'strɑ:təm]
 understratum\(dia ly,dia chat) tang duoi
 understroke\gach duoi
 understudy\(san khau) nguoi dong thay
@@ -54698,7 +54680,7 @@ yachtsman\nguoi di choi thuyen buom
 yachtsmanship\thuat lai thuyen buom
 yaffil\(dong vat hoc) chim go kien xanh
 yaffle\(dong vat hoc) chim go kien xanh
-yah\ai!, ui cha cha!
+yah\ai!, ui cha
 yahoo\Io-hu (mot giong thu mang hinh nguoi trong tieu thuyet " Nhung cuoc du hanh cua Guy-li-ve")
 yak\(dong vat hoc) bo Tay tang
 yale\o khoa (hinh) ong
