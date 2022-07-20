@@ -73,11 +73,27 @@ void readDefFromCSV(const std::string& filepath, Trie*&myTrie) {
 	else {
 		string line = "";
 		while (getline(fin, line)) {
-			string word, def;
+			string word, def,subDef;
 			stringstream ss(line);
 			getline(ss, word, '\\');
 			getline(ss, def,'\n');
 			//cout << word << ": " << def << endl;
+			int defCount = 0;
+			for(int i = 0; i< def.length(); ++i)
+			{
+				if(def[i] == ';')
+				{
+					++defCount;
+				}
+			}
+			stringstream temp(def);
+			while(defCount>=0)
+			{
+				getline(temp,subDef,';');
+				myTrie->insert(subDef,word);
+				--defCount;
+			}
+
 			line = "";
 			myTrie->insert(def,word);
 		}
