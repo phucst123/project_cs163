@@ -306,7 +306,7 @@ void Game(Trie*&myTrie)
         cout << "----DASHBOARD----" << endl;
         cout << "1. The definition game\n"
              << "2. The word game\n"
-             << "3. Return\n";
+             << "0. Return\n";
         int choice;
         clearInputBuffer();
         cin >> choice;

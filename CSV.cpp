@@ -11,7 +11,7 @@ void loadData() {
 
 	readDefFromCSV("data\\engtoeng\\", ENGTOENG_DEF);
 	readDefFromCSV("data\\engtovie\\", ENGTOVIE_DEF);
-	//readDefFromCSV("data\\vietoeng\\", VIETOENG_DEF);
+	readDefFromCSV("data\\vietoeng\\", VIETOENG_DEF);
 	readDefFromCSV("data\\slang\\", SLANG_DEF);
 	readDefFromCSV("data\\emoji\\", EMOJI_DEF);
 
