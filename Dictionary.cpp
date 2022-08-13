@@ -50,16 +50,25 @@ void Dictionary::initWindow()
 
 void Dictionary::initState()
 {
-	this->states.push(new Homemenu(this->window, &this->states));
+	this->states.push(new HomeMenu(this->window, &this->states));
 }
 
 void Dictionary::run()
 {
 	while (this->running())
 	{
+		this->updateDt();
 		this->update();
 		this->render();
 	}
+}
+
+void Dictionary::updateDt()
+{
+	this->dt = this->dtClock.restart().asSeconds();
+
+	//system("cls");
+	//std::cout << this->dt << "\n";
 }
 
 void Dictionary::updateSFMLEvents()
@@ -109,8 +118,8 @@ void Dictionary::update()
 
 	this->updateSFMLEvents();
 
-
 	if (!this->states.empty()) {
+		this->states.top()->update(this->dt);
 		if (this->states.top()->getQuit()) {
 			this->states.top()->endState();
 			delete this->states.top();
@@ -121,6 +130,11 @@ void Dictionary::update()
 	else this->window->close();
 }
 
+const bool Dictionary::running() const
+{
+	return this->window->isOpen();
+}
+
 void Dictionary::render()
 {
 	this->window->clear();
@@ -128,5 +142,14 @@ void Dictionary::render()
 		this->states.top()->render();
 	}
 	this->window->display();
+}
+
+Dictionary::~Dictionary() {
+	delete this->window;
+
+	while (!this->states.empty()) {
+		delete this->states.top();
+		this->states.pop();
+	}
 }
 

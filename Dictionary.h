@@ -16,11 +16,14 @@ private:
 	bool fullscreen;
 
 	std::stack<State*> states;
+	Clock dtClock;
+	float dt;
 
 	void initVariables();
 	void initWindow();
 	void initState();
 	void updateEvents();
+	void updateDt();
 
 public:
 	Dictionary();
