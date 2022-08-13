@@ -190,6 +190,7 @@ void mainMenu() {
             << "3. Vietnamese to English" << endl
             << "4. Slang words" << endl
             << "5. Emojis" << endl
+            << "6. Reset data"<<endl
             << "0. Exit" << endl
             << "----------------" << endl;
 
@@ -220,7 +221,9 @@ void mainMenu() {
         case 5:
             detailMenu(EMOJI,EMOJI_DEF, HistoryEmoji, FavorListEmoji);
             break;
-
+        case 6:
+            resetData();
+            break;
         default:
             cout << "Invalid choice." << endl;
             milliSleep(1500);
