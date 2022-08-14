@@ -35,7 +35,11 @@ void GameWord(Trie*& myTrie)
 
     int check = rand() % 2;
     if (choice > 4 || choice < 1)
+    {
         cout << "Invalid input\n";
+        waitForEnter();
+        return;
+    }
     if (store[choice-1] == res)
     {
         cout << congrat[check]<<'\n';
@@ -80,7 +84,11 @@ void GameDefinition(Trie*& myTrie)
 
     int check = rand() % 2;
     if (choice > 4 || choice < 1)
+    {
         cout << "Invalid input\n";
+        waitForEnter();
+        return;
+    }
     if (store[choice - 1] == res)
     {
         cout << congrat[check] << '\n';
