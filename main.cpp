@@ -1,4 +1,5 @@
 #include "Global.h"
+#include "Dictionary.h"
 
 using namespace std;
 
@@ -12,24 +13,25 @@ int main() {
 
 	//myTrie->remove("hi");
 	//string t = myTrie->getMeaning("hi");
-	//cout << t << endl;
+	//cout << t << endl;P
 	//cout << "hi" << endl;*/
 
 	//myTrie->remove("go");
 
 	//if (!myTrie->root)
 	//	cout << "nullptr" << endl;
-	//else
+	//elseP
 	//	cout << "not null" << endl;
 
 	//string tmp = "";
 	//myTrie->display(cout);
 
 
-	loadData();
+	//loadData();
 	while (true) {
-		mainMenu();
-
+		//mainMenu();
+		Dictionary dictionary;
+		dictionary.run();
 		saveData();
 
 		clearScreen();

@@ -4,13 +4,17 @@
 #include"global.h"
 #include"State.h"
 
+using namespace sf;
 class HomeMenu : public State
 {
-	sf::Texture background;
-	sf::RectangleShape img;
-	sf::Font arial;
 
 private:
+	Texture backgroundTexture;
+	RectangleShape background;
+	Font arial;
+	
+	std::map<std::string, Button*> buttons;
+
 	void initBackground();
 	void initFonts();
 	void initButtons();
@@ -18,5 +22,12 @@ private:
 	void initShape();
 
 public:
-	HomeMenu(sf::RenderWindow* window, std::stack<State*>* states);	
+	HomeMenu(sf::RenderWindow* window, std::stack<State*>* states);
+	void updateEvents();
+	/*void updateInput(const float& dt);*/
+	void update(const float& dt);
+	void render(RenderTarget* target = nullptr);
+	void renderButtons(RenderTarget* target = nullptr);
+	void updateButtons();
+
 };
