@@ -27,9 +27,9 @@ void resetData()
 {
 	resetFromCSV("data\\engtoeng\\", ENGTOENG);
 	resetFromCSV("data\\engtovie\\", ENGTOVIE);
-	resetFromCSV("data\\engtovie\\", VIETOENG);
-	resetFromCSV("data\\engtovie\\", SLANG);
-	resetFromCSV("data\\engtovie\\", EMOJI);
+	resetFromCSV("data\\vietoeng\\", VIETOENG);
+	resetFromCSV("data\\slang\\", SLANG);
+	resetFromCSV("data\\emoji\\", EMOJI);
 }
 
 void saveData() {
