@@ -124,6 +124,14 @@ HomeMenu::HomeMenu(sf::RenderWindow* window, std::stack<State*>* states)
 	this->initButtons();
 }
 
+HomeMenu::~HomeMenu()
+{
+	for (auto it = this->buttons.begin(); it != this->buttons.end(); ++it) {
+
+		delete it->second;
+	}
+}
+
 void HomeMenu::updateEvents()
 {
 	switch (this->ev.type)
@@ -155,24 +163,29 @@ void HomeMenu::updateButtons()
 		it.second->update(this->mousePosView);
 	}
 
-	if (this->buttons["ENGTOENG_STATE"]->isPressedLeft()) {
-		detailMenu(ENGTOENG, ENGTOENG_DEF, HistoryEngToEng, FavorListEngToEng);
+	if (this->buttons["ENGTOENG_STATE"]->isPressedLeft()) { 
+		this->states->push(new DetailMenu(this->window, this->states, ENGTOENG, ENGTOENG_DEF, HistoryEngToEng, FavorListEngToEng));
+		//detailMenu(ENGTOENG, ENGTOENG_DEF, HistoryEngToEng, FavorListEngToEng);
 	}
 
-	if (this->buttons["ENGTOVIE_STATE"]->isPressedLeft()) {
-		detailMenu(ENGTOVIE, ENGTOVIE_DEF, HistoryEngToVie, FavorListEngToVie);
+	else if (this->buttons["ENGTOVIE_STATE"]->isPressedLeft()) {
+		//detailMenu(ENGTOVIE, ENGTOVIE_DEF, HistoryEngToVie, FavorListEngToVie);
+		this->states->push(new DetailMenu(this->window, this->states, ENGTOVIE, ENGTOVIE_DEF, HistoryEngToVie, FavorListEngToVie));
 	}
 
-	if (this->buttons["VIETOENG_STATE"]->isPressedLeft()) {
-		detailMenu(VIETOENG, VIETOENG_DEF, HistoryVieToEng, FavorListVieToEng);
+	else if (this->buttons["VIETOENG_STATE"]->isPressedLeft()) {
+		//detailMenu(VIETOENG, VIETOENG_DEF, HistoryVieToEng, FavorListVieToEng);
+		this->states->push(new DetailMenu(this->window, this->states, VIETOENG, VIETOENG_DEF, HistoryVieToEng, FavorListVieToEng));
 	}
 
-	if (this->buttons["SLANG_STATE"]->isPressedLeft()) {
-		detailMenu(SLANG, SLANG_DEF, HistorySlang, FavorListSlang);
+	else if (this->buttons["SLANG_STATE"]->isPressedLeft()) {
+		//detailMenu(SLANG, SLANG_DEF, HistorySlang, FavorListSlang);
+		this->states->push(new DetailMenu(this->window, this->states, SLANG, SLANG_DEF, HistorySlang, FavorListSlang));
 	}
 
-	if (this->buttons["EMOJI_STATE"]->isPressedLeft()) {
-		detailMenu(EMOJI, EMOJI_DEF, HistoryEmoji, FavorListEmoji);
+	else if (this->buttons["EMOJI_STATE"]->isPressedLeft()) {
+		//detailMenu(EMOJI, EMOJI_DEF, HistoryEmoji, FavorListEmoji);
+		this->states->push(new DetailMenu(this->window, this->states, EMOJI, EMOJI_DEF, HistoryEmoji, FavorListEmoji));
 	}
 
 

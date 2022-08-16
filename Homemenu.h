@@ -1,8 +1,8 @@
 #pragma once
-#include"Homemenu.h"
 #include"Button.h"
 #include"global.h"
 #include"State.h"
+#include "DetailMenu.h"
 
 using namespace sf;
 class HomeMenu : public State
@@ -23,6 +23,7 @@ private:
 
 public:
 	HomeMenu(sf::RenderWindow* window, std::stack<State*>* states);
+	virtual ~HomeMenu();
 	void updateEvents();
 	/*void updateInput(const float& dt);*/
 	void update(const float& dt);
