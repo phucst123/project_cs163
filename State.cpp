@@ -8,17 +8,29 @@ State::State(sf::RenderWindow* window, std::stack<State*>* states)
 	this->quit = false;
 }
 
-//State::State(sf::RenderWindow* window, std::stack<State*>* states)
-//{
-//	this->window = window;
-//	this->states = states;
-//	this->quit = false;
-//
-//}
+State::State(sf::RenderWindow* window, std::stack<State*>* states,Trie*& WordTrie,Trie*& DefinitionTrie, vector<pair<string, string>>& searchHistory, vector<pair<string, string>>& favoritelist)
+{
+	this->window = window;
+	this->states = states;
+	this->quit = false;
+	this->myTrie = WordTrie;
+	this->DefTrie = DefinitionTrie;
+	this->history = searchHistory;
+	this->favorlist = favoritelist;
+}
 
-//State::~State()
-//{
-//}
+State::State(sf::RenderWindow* window, std::stack<State*>* states, Trie*& WordTrie)
+{
+	this->window = window;
+	this->states = states;
+	this->quit = false;
+	this->myTrie = WordTrie;
+}
+
+
+State::~State()
+{
+}
 
 const bool& State::getQuit() const
 {
